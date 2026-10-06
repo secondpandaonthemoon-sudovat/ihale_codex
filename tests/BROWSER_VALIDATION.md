@@ -28,3 +28,5 @@ Doğrulanan davranışlar:
 - Mobil ayarlar görünümü ve yakalanmamış tarayıcı hataları.
 
 Ekran görüntüleri, test PDF'si ve çalıştırma çıktıları `/workspace/artifacts` altında oluşur.
+
+P2 akışları: Packing List'te `0,569` / `1,234` / `12,5` değerlerinin tuş tuş girilmesi ve odağın korunması; çift kayıtla belge çoğaltılmaması; özel sütun düzenleme/silme; PDF blok ad/sıra/silme/geri getirme ve kayıtlı düzenin yeniden yüklenmesi; katalogda bulunmayan eski cari etiketinin görüntülenmesi, kullanımdaki etiketin yeniden adlandırılması/silinmesi; CSRF reddi; yalnız seçilen kaydedilmiş evrakın kalıcı silinmesi.

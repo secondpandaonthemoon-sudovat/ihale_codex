@@ -1,0 +1,13 @@
+{
+  "name": "ASAY PHP + MariaDB Ön İzleme",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/var/www/html",
+  "overrideCommand": false,
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {"label": "ASAY canlı geliştirme", "onAutoForward": "openBrowser", "protocol": "http"}
+  },
+  "postCreateCommand": "sh .devcontainer/prepare.sh",
+  "shutdownAction": "stopCompose"
+}

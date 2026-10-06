@@ -1,0 +1,35 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/var/www/html
+    ports:
+      - "127.0.0.1:${ASAY_PREVIEW_PORT:-8081}:8080"
+    environment:
+      ASAY_DB_HOST: db
+      ASAY_DB_PORT: "3306"
+      ASAY_DB_NAME: asay_preview
+      ASAY_DB_USER: asay_preview
+      # These defaults are for an isolated development database, never production.
+      ASAY_DB_PASSWORD: asay_preview_dev_only
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mariadb:11.8
+    environment:
+      MARIADB_DATABASE: asay_preview
+      MARIADB_USER: asay_preview
+      MARIADB_PASSWORD: asay_preview_dev_only
+      MARIADB_ROOT_PASSWORD: asay_preview_root_dev_only
+    volumes:
+      - asay-preview-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+volumes:
+  asay-preview-db:

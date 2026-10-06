@@ -1,0 +1,7 @@
+.git
+storage
+config/database.local.php
+config/drive.php
+node_modules
+.env
+.env.*

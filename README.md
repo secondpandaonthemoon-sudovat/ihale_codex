@@ -35,6 +35,16 @@ ASAY_E2E_DB=1 php tests/e2e_db_contract.php
 
 Bu görüntüler örnek verilerle çalışan uygulamadan alınmıştır; canlı site bağlantısı değildir.
 
-![Ayarlar ve etiket yönetimi](docs/screenshots/ayarlar.png)
+![Ayarlar ve etiket yönetimi](docs/screenshots/ayarlar-p2.png)
 
-[PDF stüdyosu](docs/screenshots/pdf-studyosu.png) · [Ödeme takibi](docs/screenshots/odeme-takibi.png) · [Mobil ayarlar](docs/screenshots/ayarlar-mobil.png)
+[Packing List ve yeni düzenleme düğmeleri](docs/screenshots/packing-p2.png) · [PDF stüdyosu](docs/screenshots/pdf-studyosu.png) · [Ödeme takibi](docs/screenshots/odeme-takibi.png) · [Mobil ayarlar](docs/screenshots/ayarlar-mobil.png)
+
+## GitHub Codespaces ile uygulamayı görerek geliştirme
+
+[Codespaces ön izleme ortamını aç](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=secondpandaonthemoon-sudovat%2Fihale_codex)
+
+Alternatif: **Code → Codespaces → Create codespace on main**. PHP ve MariaDB servisleri `.devcontainer` üzerinden başlar. **Ports → 8080 → Open in Browser** ile uygulamayı açın. İlk kullanımda `install.php` üzerinden boş geliştirme veritabanına yönetici hesabı oluşturun; host `db`, veritabanı ve kullanıcı `asay_preview` olarak hazır gelir. Veritabanı şifresi alanına `asay_preview_dev_only` yazın; yönetici hesabı için kendi şifrenizi seçin. Bu geliştirme veritabanı üretim verisinden ayrıdır. Codespaces kullanımınız GitHub hesabınızın kota ve koşullarına bağlıdır.
+
+Sonraki GitHub güncellemelerini açık Codespace'e almak için, yerel değişikliklerinizi koruyarak `git pull --ff-only` çalıştırın. Ön izleme portunu özel tutun.
+
+[V3.13.4-P2 evrak ve etiket düzeltmeleri](docs/INCELEME_V3_13_4_P2.md)

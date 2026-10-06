@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
 const ASAY_APP_VERSION = '3.13.4';
-const ASAY_APP_ASSET_VERSION = ASAY_APP_VERSION . '-p1';
-const ASAY_APP_BUILD = 'V3.13.4 · Etiket, PDF & Finans Düzeltmeleri (P1)';
+const ASAY_APP_ASSET_VERSION = ASAY_APP_VERSION . '-p2';
+const ASAY_APP_BUILD = 'V3.13.4 · Evrak Stüdyosu & Etiket Yönetimi (P2)';
 if (!date_default_timezone_set((string)(getenv('ASAY_TIMEZONE') ?: 'Europe/Istanbul'))) {
     date_default_timezone_set('Europe/Istanbul');
 }
@@ -40,6 +40,10 @@ function db_config(): array {
     if(is_file($local)){
         $custom=require $local;
         if(is_array($custom))$base=array_replace($base,$custom);
+    }
+    // Container/Codespaces bindings override local development connection settings.
+    foreach(['host'=>'ASAY_DB_HOST','port'=>'ASAY_DB_PORT','database'=>'ASAY_DB_NAME','username'=>'ASAY_DB_USER','password'=>'ASAY_DB_PASSWORD'] as $key=>$variable){
+        $value=getenv($variable);if($value!==false)$base[$key]=$key==='port'?(int)$value:$value;
     }
     return $base;
 }
@@ -234,7 +238,7 @@ function state_write_key_allowed(string $key,array $u): bool {
   'suppliers'=>'supplier','supplierDirectory'=>'supplier',
   'selected'=>'cost','quoteMarkup'=>'cost','customerQuotes'=>'cost','won'=>'cost',
   'accounts'=>'finance','guarantees'=>'finance','cash'=>'cash','cashAccounts'=>'cash',
-  'documents'=>'docs','requestAttachments'=>'docs','pdfColumnsByType'=>'docs','pdfBlocksByType'=>'docs','pdfFreeTextsByType'=>'docs','pdfRowCustom'=>'docs','checklistNotes'=>'docs',
+  'documents'=>'docs','requestAttachments'=>'docs','pdfColumnsByType'=>'docs','pdfBlocksByType'=>'docs','pdfBlockLabelsByType'=>'docs','pdfFreeTextsByType'=>'docs','pdfRowCustom'=>'docs','checklistNotes'=>'docs',
   'company'=>'settings','roles'=>'settings','ui'=>'settings','appIdentity'=>'settings','requestNumber'=>'settings','requestUnits'=>'settings','pdfColumns'=>'settings',
  ];
  if($key==='tagCatalog')return has_app_write_permission('request',$u)||has_app_write_permission('finance',$u)||has_app_write_permission('settings',$u);
