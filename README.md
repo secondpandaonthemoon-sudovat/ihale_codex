@@ -30,3 +30,11 @@ ASAY_E2E_DB=1 php tests/e2e_db_contract.php
 ```
 
 [İzole veritabanında tarayıcı testleri](tests/BROWSER_VALIDATION.md). Tarayıcı fixture testleri iş verisini değiştirir; üretim veritabanında çalıştırmayın.
+
+## Test ortamından ekran görüntüleri
+
+Bu görüntüler örnek verilerle çalışan uygulamadan alınmıştır; canlı site bağlantısı değildir.
+
+![Ayarlar ve etiket yönetimi](docs/screenshots/ayarlar.png)
+
+[PDF stüdyosu](docs/screenshots/pdf-studyosu.png) · [Ödeme takibi](docs/screenshots/odeme-takibi.png) · [Mobil ayarlar](docs/screenshots/ayarlar-mobil.png)
