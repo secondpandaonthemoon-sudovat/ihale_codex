@@ -1,0 +1,9 @@
+ASAY ERP V3.5.7
+
+- Cari kartlarda anlık isim/yetkili/vergi no araması korunup sonuç sayacı eklendi.
+- Tema ayarlarında menü yazı ve ikon renk kontrolleri korunup final akışta doğrulandı.
+- Kalem Bazlı Teklif Kıyaslama sadeleştirildi.
+- Uzun Girilen/KDV/Güncel kur/açıklama metinleri hücrelerden kaldırıldı.
+- Her hücrede KDV Hariç Birim, KDV Dahil Birim, Kalem Toplam Alış gösterilir.
+- Her tedarikçi için KDV Hariç Toplam, KDV Dahil Toplam ve Toplam Alış kartı eklendi.
+- Seçili/en uygun/teknik durum göstergeleri korunur.

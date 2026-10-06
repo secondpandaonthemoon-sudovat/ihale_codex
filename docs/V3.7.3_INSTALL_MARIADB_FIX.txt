@@ -1,0 +1,7 @@
+ASAY ERP V3.7.3
+- MariaDB 10.4 uyumluluk: SHOW TABLES LIKE ? kaldırıldı; information_schema doğrulaması kullanılıyor.
+- Installer POST sırasında db() cache'ine bağlı değil; form bilgileriyle bağımsız PDO açıyor.
+- database.local.php yalnız başarılı şema + Admin kurulumundan sonra yazılıyor.
+- Kurulum yarıda kalırsa oluşturulan ASAY tabloları temizleniyor.
+- Admin rol değeri uygulama seviyesinde normalize ediliyor.
+- SQL/ASAYDB restore mevcut Admin hesabını korumaya devam eder.

@@ -1,0 +1,14 @@
+ASAY ERP V3.3.10 — MODAL / VERİ KAYBI KORUMASI
+
+Sorun:
+- Her modal backdrop alanında dışarı tıklama closeModal() çalıştırıyordu.
+- ESC tuşu tüm açık modalları kapatıyordu.
+- Yeni Talep, Cari, Teklif, Ödeme, Evrak ve diğer veri girişlerinde yanlış bir tıklama yazılan veriyi kaybettirebiliyordu.
+
+Düzeltme:
+- Modal dışındaki karanlık/boş alana tıklamak artık pencereyi KAPATMAZ.
+- ESC tuşu artık açık veri giriş penceresini KAPATMAZ.
+- Yanlış dış tıklamada modal kısa bir görsel uyarı verir.
+- Kullanıcıya Kapat / İptal butonunu kullanması gerektiğini belirten uyarı gösterilir.
+- X, Kapat ve İptal gibi açık kullanıcı aksiyonları normal şekilde çalışmaya devam eder.
+- Değişiklik merkezi modal altyapısına uygulanmıştır; Yeni Talep dahil tüm modal pencerelerde geçerlidir.

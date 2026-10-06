@@ -1,0 +1,6 @@
+ASAY ERP V3.11.1
+- Gerçek Operasyon Gideri cari seçimi yalnız tedarikçilerle sınırlı değildir.
+- Gümrükçü, nakliyeci, hizmet sağlayıcı, özel/resmi kurum ve diğer müşteri dışı cariler listelenir.
+- Cari grup başka para biriminde kayıtlı olsa bile listede görünür.
+- Gider para biriminde alt cari hesabı yoksa ödeme sırasında aynı partyKey altında otomatik sıfır bakiyeli döviz hesabı açılır.
+- Müşteri carileri operasyon gideri sağlayıcısı olarak kullanılamaz.

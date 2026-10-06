@@ -1,0 +1,21 @@
+ASAY ERP V3.9.0 QA
+
+Bu build uzerinde otomatik olarak gecen kontroller:
+- Tum PHP dosyalari syntax/lint
+- Tum JS dosyalari node --check
+- static/security smoke
+- merkezi surum kontrolu
+- CSRF / TCMB / Drive token guvenlik kontrolleri
+- clean install + backup/restore regression
+- SQL data-only restore + mevcut Admin koruma
+- cari ekstre duzenle/sil/reversal
+- Check List dual currency
+- musteri teklif kalem identity
+- PDF preview/print parity
+- ZIP stream
+- Teminat modulu: Var/Yok, request tab, global takip, Excel/PDF, nakit/blokaj, mektup, vade, dashboard aksiyonlari
+- Teminatin Maliyet modulunden ayrilmasi
+- Merkezi state normalizasyonu ve finance permission haritasi
+
+Not: ChatGPT build ortaminda calisan MySQL/MariaDB servisi bulunmadigi icin live DB contract testi burada kosulamadi.
+Paket kokundeki RUN_QA_WINDOWS.bat yerel XAMPP/MariaDB ortaminda bu testi calistirir.

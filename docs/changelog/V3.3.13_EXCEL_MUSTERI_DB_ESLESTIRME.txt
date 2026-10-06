@@ -1,0 +1,13 @@
+ASAY ERP V3.3.13 — EXCEL TALEP MÜŞTERİ / CARİ EŞLEŞTİRME
+
+- Talep/İhale Excel şablonu artık statik değildir.
+- "Excel Şablonu İndir" anında MySQL/app_state içindeki mevcut Müşteri, Resmî Kurum ve Özel Kurum carileri okunur.
+- Şablonun Müşteri / Kurum sütununda DB'den gelen açılır liste vardır.
+- Şablonda ayrıca Müşteri Listesi sayfası bulunur.
+- Yeni cari eklendikten sonra şablon yeniden indirildiğinde liste otomatik güncellenir.
+- Import sırasında Vergi/Kurum No eşleşmesi önceliklidir.
+- Sonra normalize edilmiş tam isim eşleşmesi yapılır.
+- Son güvenlik katmanı olarak uzun firma/kurum adlarında yalnız çok küçük ve tekil yazım farklarına kontrollü fuzzy eşleşme uygulanır.
+- Eşleşme bulunduğunda Excel'deki yazım yerine DB'deki gerçek cari adı ve mevcut partyKey kullanılır.
+- Bu nedenle "Kosovo Türk Temsil Heyet Başkanlığı" / "kosova türk temsil heyet başkanlığı" gibi küçük yazım farkları ikinci cari oluşturmaz.
+- Belirsiz fuzzy eşleşmede otomatik birleştirme yapılmaz; yanlış carileri birleştirme riski önlenir.

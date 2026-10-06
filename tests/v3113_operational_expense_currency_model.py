@@ -1,0 +1,7 @@
+from pathlib import Path
+root=Path(__file__).resolve().parents[1]
+app=(root/'assets/js/app.js').read_text(encoding='utf-8'); idx=(root/'index.php').read_text(encoding='utf-8'); ops=(root/'api/operations.php').read_text(encoding='utf-8'); boot=(root/'app/bootstrap.php').read_text(encoding='utf-8')
+checks={'version':"'3.13.4'" in boot and 'V3.13.4' in boot,'real_expense_currency_select':'Gerçek Gider Para Birimi' in idx and 'value="TRY"' in idx and 'value="EUR"' in idx and 'value="USD"' in idx,'request_reporting_currency':'Operasyon Raporlama Para Birimi' in idx and "reportCur=String(r.currency" in app,'payment_account_any_currency':'TL / EUR / USD hesaplardan istediğinizi seçebilirsiniz.' in idx,'manual_rate':'Manuel / Banka Kuru' in idx and 'cerManualRate' in app and "fxMode==='manual'" in ops,'three_snapshots_backend':"'expenseAmount'=>$amount" in ops and "'reportAmount'=>$reportAmount" in ops and "'bankAmount'=>$bankAmount" in ops,'request_currency_locked_backend':"$reportCur=strtoupper((string)($r['currency']" in ops,'realized_table_three_values':all(x in app for x in ['<th>Gerçek Gider</th>','<th>Son Kasa Çıkışı</th>','<th>Son Operasyon Karşılığı</th>']),'snapshot_total':'x.reportCurrency' in app and 'x.reportAmount' in app,'reverse_uses_bank_amount':"$bank['balance']=(float)$bank['balance']+$bankAmount" in ops}
+bad=[k for k,v in checks.items() if not v]
+for k,v in checks.items():print(('PASS' if v else 'FAIL')+': '+k)
+raise SystemExit(1 if bad else 0)

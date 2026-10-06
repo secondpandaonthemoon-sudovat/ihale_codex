@@ -1,0 +1,9 @@
+ASAY ERP V3.5.5 - Final QA
+
+- PDF Studio preview canvas is now exact A4 geometry at 96dpi:
+  Portrait: 794 x 1123 px
+  Landscape: 1123 x 794 px
+- Preview is visually scaled only; its internal layout geometry no longer changes between preview and print.
+- Print engine CSS remains shared by live and saved documents.
+- Build labels/cache-busting updated to V3.5.5.
+- Existing V3.5.4 PDF print-engine fix and V3.5.3 cost-center changes retained.

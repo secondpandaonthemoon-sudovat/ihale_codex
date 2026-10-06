@@ -1,0 +1,19 @@
+ASAY ERP V3.0 - Üretim Stabilizasyonu
+
+- Güvenli talep dokümanı upload/download; MIME+uzantı whitelist, 25 MB limit, rol kontrolü, kategori/revizyon/yükleyen ve audit.
+- Storage doğrudan web erişimine kapalı.
+- Finansal kritik işlemler MySQL transaction: kazanılan işin sipariş/PO/cari açılışı, ön ödeme, ters kayıt, teklif tutarı revizyonu, iptal/kayıp finans düzeltmesi.
+- Müşteri teklif tutarı değişince sipariş ve cari farkı senkronize edilir.
+- Ön ödeme: toplam veya kalan üzerinden %, farklı döviz kasa/banka için manuel FX, tahsilat geçmişi ve ters kayıt.
+- Durum geçiş matrisi, kayıp/iptal nedeni, kazanma/kayıp/iptal zamanları.
+- Sipariş sonrası kıyaslama ve tedarikçi fiyat değişiklikleri kilitlenir.
+- Talep silmede bağlı dokümanlar güvenli endpoint ile temizlenir.
+- Doküman kategori, revizyon, yükleyen, açıklama, güvenli indirme ve audit.
+- PDF tüm belge tiplerinde kolon göster/gizle, ad değiştir, özel kolon, sürükle/sırala; PDF blokları sürükle/sırala; kayıtlı belge kendi layout snapshot'ını saklar.
+- Gerçek XLSX rapor export ve rapor kolon seçimi.
+- Talep durum renkleri Ayarlar'dan özelleştirilebilir; durum legend'i katlanabilir.
+- Kazanıldı + Evrak Eksik Dashboard aksiyonu ayrı ayarlanabilir.
+- Audit log UI ve sunucu audit kayıtları.
+- Entity lock ile çok kullanıcılı aynı kayıt düzenleme koruması.
+- İş modülleri module_state ve normalize MySQL tablolara da kalıcı senkronize edilir; app_state geriye uyumluluk/ayar katmanı olarak korunur.
+- Demo başlangıç verileri temizlendi.

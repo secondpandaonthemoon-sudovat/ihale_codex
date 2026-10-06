@@ -1,0 +1,6 @@
+ASAY ERP V3.5.2 AUDIT FIX
+
+- Kıyaslama sayfasındaki eski Ek Maliyetler bloğu kaldırıldı; maliyet tek kaynak olarak Maliyet sekmesinden yönetilir.
+- Gümrükçü, Nakliyeci ve Hizmet Sağlayıcı tipleri normalize parties tablosunda korunur.
+- PDF editöründe logo resize kontrolünü ezen width:auto !important kaldırıldı; maksimum çıktı sınırı korunur.
+- Cache-bust sürümü 3.5.2 yapıldı.

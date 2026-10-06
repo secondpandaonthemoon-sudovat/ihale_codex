@@ -1,0 +1,18 @@
+ASAY ERP V3.3.23 — DOKÜMAN GÖRÜNTÜLEME
+
+Dokümanlar > Talep Doküman Kütüphanesi:
+- Mevcut Aç ve Sil butonları korunmuştur.
+- Yeni Görüntüle butonu eklenmiştir.
+- Görüntüleme uygulama içindeki modalda yapılır.
+
+Destek:
+- PDF: iframe önizleme.
+- JPG/JPEG/PNG/WebP/GIF/BMP/SVG: görsel önizleme.
+- TXT/CSV/JSON/XML/MD/LOG: metin önizleme.
+- DOC/DOCX/XLS/XLSX ve diğer tarayıcıda güvenilir render edilemeyen tipler:
+  dosya bilgisi + Dosyayı Aç / Yeni Sekmede Aç seçeneği.
+
+Güvenlik/UX:
+- Mevcut dosya URL yapısı kullanılır.
+- Viewer kapanırken PDF iframe temizlenir.
+- Mobil uyumlu büyük önizleme alanı eklenmiştir.

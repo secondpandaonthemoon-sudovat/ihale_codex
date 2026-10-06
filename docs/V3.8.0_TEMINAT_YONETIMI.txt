@@ -1,0 +1,7 @@
+ASAY ERP V3.8.0 - Teminat Yönetimi
+- Teminat Var/Yok ve otomatik oran hesabı
+- Teminat Takip modülü
+- Nakit/blokaj ve banka teminat mektubu ayrımı
+- Banka/kasa, kurum, tarih, süre, vade, referans takibi
+- Excel ve PDF çıktıları
+- Nakit teminat çözümü/iadesi finans hareketi

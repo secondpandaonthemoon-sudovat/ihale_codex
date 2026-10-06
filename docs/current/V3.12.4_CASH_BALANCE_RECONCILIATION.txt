@@ -1,0 +1,8 @@
+ASAY ERP V3.12.4
+
+- JSON/bağlantı cevabı belirsiz kalırsa idempotency anahtarı ile operation_idempotency tablosu kontrol edilir.
+- İşlem sunucuda commit olmuşsa state otomatik yeniden alınır; kullanıcı aynı ödemeyi yanlışlıkla ikinci kez yapmaz.
+- Kasa/Banka yetersiz bakiye veya hesap kimliği hatasında client state sunucudan zorla yenilenir.
+- Ödeme hesabı backend tarafında ID + hesap adı + para birimi ile çözülür.
+- Aynı numeric ID birden fazla Kasa/Banka kaydında varsa yanlış ilk kayıt kullanılmaz; fingerprint ile doğru hesap seçilir veya açık kimlik çakışması hatası verilir.
+- Sistem tanılamasına duplicate cash account ID sayacı eklendi.

@@ -1,0 +1,11 @@
+ASAY ERP V3.13.4
+Teslimat Geri Alma & Müşteri Tahsilatı Düzenleme
+
+- Teslim edilmiş parti, güvenli "Teslimatı Geri Al" işlemi ile tekrar Planlandı durumuna döndürülebilir.
+- PO teslimat durumları kalan teslim edilmiş partilere göre yeniden hesaplanır.
+- Eski partiye özel aktif finans hareketi varsa teslimat geri alma bloklanır.
+- Sipariş & Operasyon > Gerçek Müşteri Tahsilatları bölümünde Ters Kayıt yerine Düzenle + Sil bulunur.
+- Düzenle: tutar, tarih, Kasa/Banka, kur/parite, açıklama ve opsiyonel teslimat partisi bağlantısını atomik olarak günceller.
+- Sil: finance_delete üzerinden gerçek silme yapar; Kasa/Banka, cari, sipariş tahsilatı ve ödeme planı birlikte geri alınır.
+
+Kurulum: Dosyaları V3.13.4 ile değiştirin. Şema değişikliği yoktur; upgrade.php çalıştırılması mevcut kurulumlarda sürüm kaydı ve mirror senkronu için önerilir.

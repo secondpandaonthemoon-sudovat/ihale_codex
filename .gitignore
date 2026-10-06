@@ -1,0 +1,18 @@
+# Local credentials and runtime configuration
+/config/database.local.php
+/config/drive.php
+.env
+.env.*
+!.env.example
+# Business data, uploaded documents, backups and OAuth tokens
+/storage/**
+!/storage/.htaccess
+*.asaydb.json
+*.asayfull.zip
+*.sql.gz
+# Development caches and temporary outputs
+node_modules/
+__pycache__/
+*.pyc
+/tests/_inline_*.js
+/test_write

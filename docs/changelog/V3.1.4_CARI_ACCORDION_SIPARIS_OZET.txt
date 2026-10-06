@@ -1,0 +1,8 @@
+ASAY ERP V3.1.4
+- Cari kartları gerçek accordion oldu: ilk görünüm özet, tek tık açar, tekrar tek tık kapatır.
+- Bir cari açılırken diğer açık cari otomatik kapanır.
+- Cari kartında çift tıklama varsayılan tarayıcı davranışı engellendi.
+- E-posta ve web bağlantıları kart aç/kapa davranışından izole edildi.
+- Sipariş & Operasyon kartları minimize kalırken ilk 4 sipariş kalemi ve adetleri özet satırında görünür.
+- 4'ten fazla kalem varsa '+N kalem daha' gösterilir.
+- Sipariş kartında çift tıklama yeni pencere/istenmeyen davranış üretmez.

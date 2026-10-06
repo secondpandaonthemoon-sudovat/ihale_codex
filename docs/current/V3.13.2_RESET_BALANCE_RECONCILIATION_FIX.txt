@@ -1,0 +1,17 @@
+ASAY ERP V3.13.2
+SIFIRLAMA BAKIYE MUTABAKATI
+
+Kök neden
+- V3.13.0/1 iş verisi sıfırlamasında PHP foreach döngüsü geçici array kopyasını değiştiriyordu.
+- cash/account transaction ekstreleri silinirken canonical app_state içindeki kart bakiyeleri eski değerlerinde kalabiliyordu.
+
+Düzeltmeler
+1. Cari ve Kasa/Banka master kartları artık canonical array üzerinde doğrudan sıfırlanır.
+2. Reset sonrası bakiye ve hareket post-condition doğrulaması eklendi.
+3. V3.13.0/1 ile daha önce sıfırlanmış veritabanları için güvenli onarım migrasyonu eklendi.
+4. Onarım yalnız operasyon ve finans ledger tabloları tamamen boşsa çalışır; gerçek hareket bulunan hesaplara dokunmaz.
+
+Kurulum
+- Dosyaları V3.13.2 ile değiştirin.
+- /upgrade.php açın ve güncellemeyi bir kez uygulayın.
+- Kasa & Banka ile Cari Hesap ekranını yenileyin.

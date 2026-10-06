@@ -1,0 +1,25 @@
+ASAY ERP V3.3.16 — YENİ TALEP / İHALE İÇİN EXCEL KALEM YÜKLEME
+
+- Yeni Talep / İhale modalındaki Talep Edilen Ürünler bölümüne:
+  * + Kalem Ekle
+  * Excel’den Kalem Yükle
+  * Excel Şablonu İndir
+  butonları eklendi.
+
+- Excel şablonu kullanıcının verdiği örnekle aynı kolon düzenindedir:
+  S/N | Talep Edilen Ürünler | Miktar | BİRİM | Marka / Model | Teknik Özellik
+
+- Excel yüklenince kalemler doğrudan açık Yeni Talep modalındaki tempItems listesine EKLENİR.
+- Kullanıcı kaydetmeden önce tüm yüklenen kalemleri aynı ekranda görür, düzenler veya siler.
+- Mevcut manuel kalemler silinmez; Excel kalemleri mevcut listenin devamına eklenir.
+- Talep kalem adedi canlı badge ile gösterilir.
+
+Birim yönetimi:
+- Merkezi state.requestUnits listesi eklendi ve MySQL app_state içinde saklanır.
+- Talep editöründeki birim select artık bu merkezi DB listesinden oluşturulur.
+- Excel şablonunun BİRİM kolonu açılır listelidir ve aynı standart birimleri kullanır.
+- Excel birimi DB listesinde varsa canonical DB birimine eşleştirilir.
+- DB’de olmayan Excel birimi korunur ancak kullanıcıya uyarı gösterilir ve modalda select üzerinden düzeltilebilir.
+
+Şablon:
+templates/Talep_Kalemleri_Excel_Sablonu.xlsx

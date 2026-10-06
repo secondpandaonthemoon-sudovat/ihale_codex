@@ -1,0 +1,8 @@
+ASAY ERP V3.3.2
+- Miktar/adet gösterimleri Türkçe binlik ayırıcı ile standardize edildi.
+- 90000 Adet -> 90.000 Adet
+- 9000 Adet -> 9.000 Adet
+- 1250.5 kg -> 1.250,5 kg
+- Tam sayılarda gereksiz ondalık gösterilmez.
+- Ondalıklı miktarlarda en fazla 4 basamak korunur.
+- Talep kalemleri, teklif kıyaslama, sipariş, partili teslimat, PDF/evrak tabloları ve özetlerde aynı format kullanılır.

@@ -1,0 +1,8 @@
+ASAY ERP V3.7.6
+- Yeni Talep / İhale Operasyon Bankası sabit demo seçenekleri kaldırıldı.
+- Liste gerçek state.cashAccounts / cash_accounts verisinden beslenir.
+- Para birimine göre filtrelenir.
+- Hesap yoksa seçim disable olur ve açık uyarı gösterilir.
+- Talepte bankAccountId + bank adı saklanır; eski kayıtlarla geriye uyumludur.
+- Hesap silinince bağlı talep banka seçimi temizlenir.
+- Evraklarda banka bilgisi önce bankAccountId ile çözülür.

@@ -1,0 +1,13 @@
+ASAY ERP V3.3.26 — GELEN TEDARİKÇİ TEKLİFLERİ KALEM TOPLAMLARI
+
+- Her tedarikçi teklif kartındaki her kalem artık:
+  Ürün Adı
+  Miktar × Birim Fiyat
+  Birim Fiyat
+  Kalem Toplamı
+  alanlarını gösterir.
+
+- Kalem Toplamı = Miktar × Tedarikçi Birim Fiyatı.
+- Para birimi teklifin kendi para birimidir (TRY / EUR / USD).
+- Kart üstündeki genel Toplam Tutar görünümü korunur.
+- Mobil görünüm için satır düzeni responsive hale getirildi.

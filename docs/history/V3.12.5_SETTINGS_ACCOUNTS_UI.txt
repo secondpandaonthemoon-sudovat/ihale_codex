@@ -1,0 +1,8 @@
+ASAY ERP V3.12.5
+
+- Ayarlar & Tasarım Sistemi 6 kategori sekmesine ayrıldı.
+- Aynı anda yalnız seçili ayar grubu görünür; mevcut alan ID ve kayıt fonksiyonları korunur.
+- Görünüm/tema kartları sıkıştırıldı, firma/belge araçları daha düzenli iki kolon yerleşime alındı.
+- Cari kartlar kompakt listeye dönüştürüldü; iletişim/adres/etiket/aksiyon tekrarları listeden kaldırıldı.
+- Cari detay yönetimi sağ panelde toplandı; Düzenle, Etiketler, Döviz Hesabı, PDF/CSV, Tahsilat/Ödeme ve Sil araçları aynı yerde.
+- Responsive davranış korundu.

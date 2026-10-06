@@ -1,0 +1,16 @@
+ASAY ERP V3.3.12 — EXCEL İÇE AKTARMA ŞABLONU FIX
+
+Sorun:
+- Excel şablonları genel rapor XLSX üreticisi üzerinden dinamik oluşturuluyordu.
+- Şablon yapısı gerçek içe aktarma kullanımına uygun değildi.
+- Tarih, telefon, vergi no ve referans gibi alanlarda Excel otomatik sayı/tarih dönüşümleri karışıklık yaratabiliyordu.
+
+Düzeltme:
+- Talep / İhale için ayrı, gerçek XLSX şablonu eklendi: templates/Talep_Ihale_Aktarim_Sablonu.xlsx
+- Cari Kart için ayrı XLSX şablonu eklendi: templates/Cari_Kart_Aktarim_Sablonu.xlsx
+- Şablon indirme artık genel export_xlsx.php kullanmıyor; doğrudan doğrulanmış statik şablonu indiriyor.
+- İlk sayfa doğrudan içe aktarılabilir başlıklarla hazırlanmıştır.
+- İkinci sayfada kullanım açıklamaları vardır.
+- Müşteri Tipi, Para Birimi, Teslim Şekli ve Öncelik alanlarında seçim listeleri vardır.
+- Excel Referansı, telefon, e-posta, vergi no ve tarih alanları metin olarak korunur.
+- Tarih formatı YYYY-AA-GG olarak açıkça belirtilmiştir.

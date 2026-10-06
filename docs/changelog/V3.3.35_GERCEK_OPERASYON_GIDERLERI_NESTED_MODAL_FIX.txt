@@ -1,0 +1,25 @@
+ASAY ERP V3.3.35 — GERÇEK OPERASYON GİDERLERİ + TEDARİKÇİ NESTED MODAL FIX
+
+1) Operasyon & Teminat Giderleri iki aşamalı hale getirildi:
+TAHMİNİ:
+- request.comparisonExpenses altında kalır.
+- Kıyaslama ve Genel Tutar hesabında kullanılır.
+
+GERÇEKLEŞEN:
+- Yalnız talep Kazanıldı veya Siparişe dönüştüğünde açılır.
+- Navlun / Gümrükçü / İndirme / İç Nakliye / Teminat ayrı ayrı gerçek gidere aktarılabilir.
+- Gerçek tutar tahmini tutardan farklı girilebilir.
+- Cari hesap ve Kasa/Banka seçilir.
+- Para birimleri aynı olmak zorundadır.
+- Kasa/Banka bakiyesi düşer.
+- Cari ekstreye gider tahakkuku + ödeme satırları işlenir; açık bakiye net değişmez (anında ödenmiş gider).
+- finance_journal içine operational_expense_payment kaydı atılır.
+- request.realizedComparisonExpenses altında operasyon kaydı tutulur.
+- Kıyaslama ekranında gerçekleşen giderler listelenir.
+- Ters kayıt desteği eklendi.
+
+2) Tedarikçi Ekle modalı:
+- supplierModal açıkken supplierDirectoryModal nested-modal olarak açılır.
+- z-index 320 ile ana teklif modalının üstünde görünür.
+- Kaydet/Kapat sonrası ana teklif modalına geri dönülür.
+- Firma Adı alanına otomatik focus verilir.

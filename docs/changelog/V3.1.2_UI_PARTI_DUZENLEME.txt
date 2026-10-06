@@ -1,0 +1,8 @@
+ASAY ERP V3.1.2
+- Sipariş & Operasyon kartları varsayılan minimize açılır.
+- Kullanıcı kart başlığına tıklayarak detayları açar.
+- Cari kartları varsayılan minimize özet görünür; karta tıklanınca detaylar açılır.
+- Planlandı durumundaki teslimat partisi düzenlenebilir.
+- Planlanan tarih, açıklama ve kalem adetleri değiştirilebilir.
+- Planlandı ve finans hareketi olmayan parti kalıcı silinebilir; ayrılan miktarlar tekrar serbest kalır.
+- Teslim edilmiş / iptal edilmiş veya aktif finans hareketi bulunan parti geçmiş bütünlüğü için doğrudan düzenlenemez/silinemez.

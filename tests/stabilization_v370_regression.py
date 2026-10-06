@@ -1,0 +1,31 @@
+from pathlib import Path
+import re,sys
+R=Path(__file__).resolve().parents[1]
+checks=[]
+def ck(name,cond): checks.append((name,bool(cond)))
+boot=(R/'app/bootstrap.php').read_text()
+schema=(R/'database/schema.sql').read_text()
+upgrade=(R/'upgrade.php').read_text()
+index=(R/'index.php').read_text()
+runtime=(R/'assets/js/runtime.js').read_text()
+app=(R/'assets/js/app.js').read_text()
+tcmb=(R/'tcmb_proxy.php').read_text()
+drive=(R/'google-drive/drive_client.php').read_text()
+health=(R/'api/health.php').read_text()
+dbm=(R/'api/database_manager.php').read_text()
+ck('central_version', 'ASAY_APP_VERSION' in boot and 'ASAY_APP_BUILD' in boot and "'3.13.4'" in boot)
+ck('timezone', 'Europe/Istanbul' in boot and 'date_default_timezone_set' in boot)
+ck('party_enum', "'customs','freight','service'" in schema and 'MODIFY COLUMN party_type' in upgrade and 'MODIFY COLUMN party_type' in dbm)
+ck('api_csrf_guard', 'enforce_api_mutation_csrf' in boot and "['POST','PUT','PATCH','DELETE']" in boot)
+ck('fetch_csrf', 'X-ASAY-CSRF' in runtime and 'window.fetch=function' in runtime)
+ck('beacon_csrf', "patch_beacon&_csrf=" in index)
+ck('tcmb_auth_cache', 'require_login();' in tcmb and 'TCMB_CACHE_TTL=900' in tcmb and 'allowStale' in tcmb)
+ck('drive_token_permissions', '@chmod($p,0600)' in drive and "LOCK_EX" in drive)
+ck('no_native_dialogs', not re.search(r'(?<!app)\b(?:confirm|prompt|alert)\s*\(',app))
+ck('dialog_runtime', 'appConfirm' in runtime and 'appPrompt' in runtime)
+ck('css_split', (R/'assets/css/components.css').exists() and 'components.css?v=' in index)
+ck('mirror_health', "'canonical'=>'app_state'" in health and "'degraded'" in health and 'mirror farkı' in health)
+ck('version_ui', 'V3.5.5' not in index and "build:'V3.5.7'" not in app)
+fail=[n for n,v in checks if not v]
+for n,v in checks: print(('PASS' if v else 'FAIL')+': '+n)
+if fail: sys.exit(1)

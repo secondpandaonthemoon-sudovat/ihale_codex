@@ -1,0 +1,10 @@
+ASAY ERP V2.7.2
+Ayarlar > Bugün Aksiyon Gerekenler Ayarları eklendi.
+
+Ayrı ayrı yönetilebilir:
+- Son Teklif / İhale Tarihleri: aktif/pasif, kaç gün kala, bugün, geçmiş.
+- Sevkiyata Hazır Operasyonlar: aktif/pasif.
+- Müşteri Tahsilat Vadeleri: aktif/pasif, kaç gün kala, bugün, geçmiş.
+- Tedarikçi Ödeme Vadeleri: aktif/pasif, kaç gün kala, bugün, geçmiş.
+
+Ayarlar MySQL state'e kaydedilir ve Dashboard anında yeniden hesaplanır.

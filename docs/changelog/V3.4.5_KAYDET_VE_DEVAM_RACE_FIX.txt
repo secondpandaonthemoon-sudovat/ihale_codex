@@ -1,0 +1,10 @@
+ASAY ERP V3.4.5 — Kaydet ve Devam Et Race Fix
+
+- setTimeout tabanlı devam akışı kaldırıldı.
+- pendingRequestContinue state ile hedef requestId saklanır.
+- renderRequests tamamlanır tamamlanmaz hedef kart ve sekme açılır.
+- Düzenle ve yeni kayıt aynı devam mekanizmasını kullanır.
+- Arama/filtreler devam öncesi temizlenir.
+- Kayıt butonlarına type=button eklendi.
+- saveRequest çift tıklama/çift kayıt koruması eklendi.
+- Kalem varsa Tedarikçi Teklifleri, yoksa Talep Kalemleri sekmesine devam edilir.

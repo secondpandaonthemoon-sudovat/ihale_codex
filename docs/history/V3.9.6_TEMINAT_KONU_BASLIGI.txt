@@ -1,0 +1,6 @@
+ASAY ERP V3.9.6
+- Teminat Takip tablosu Talep No + Konu Başlığı + Kurum gösterir.
+- Konu başlığı bağlı talepten canlı okunur; talep başlığı değişirse otomatik güncellenir.
+- Teminat araması konu başlığına göre çalışır.
+- Excel ve PDF teminat raporlarına Konu Başlığı sütunu eklendi.
+- Dashboard Teminat Takip kısa listesinde konu başlığı öncelikli gösterilir.

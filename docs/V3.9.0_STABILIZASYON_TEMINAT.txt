@@ -1,0 +1,10 @@
+ASAY ERP V3.9.0
+- V3.7.7 talep render/banka/OAuth/temiz kurulum düzeltmeleri korundu.
+- V3.8 Teminat Yönetimi ana dala merge edildi.
+- Talep kartında Maliyet sonrasına Teminat sekmesi eklendi; Teminat Var/Yok seçilebilir.
+- Teminat gideri Maliyet modülünden tamamen kaldırıldı.
+- Teminat ana tutarı teklif maliyetine eklenmez; ayrı finans/risk kaydıdır.
+- Nakit/blokaj isteğe bağlı kasa çıkışı, banka teminat mektubu nakit düşmeden takip edilir.
+- Merkezi state normalizasyonu eklendi.
+- Yetki kontrolleri Admin/Ayarlar permission motoruyla hizalandı.
+- Sürüm numarası PHP/installer/JS/testlerde V3.9.0 olarak merkezileştirildi.

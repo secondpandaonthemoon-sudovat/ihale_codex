@@ -1,0 +1,31 @@
+ASAY ERP V3.3.20 — ÇOKLU DÖVİZ TEDARİKÇİ TEKLİFLERİ & KUR MALİYETİ
+
+Tedarikçi teklifi:
+- Teklif Para Birimi: TRY / EUR / USD.
+- Mevcut tedarikçi carisi tek para birimindeyse teklif açıldığında otomatik önerilir.
+- Fiyatlar ve navlun orijinal teklif para biriminde saklanır.
+- Teklif kaydedildiğinde TCMB/Fallback USD/TRY ve EUR/TRY değerleri fxSnapshot olarak sabitlenir.
+- Geçmiş teklif maliyeti ertesi gün kur değişince değişmez.
+
+Gelen Tedarikçi Teklifleri:
+- Her kartta "Toplam Tutar" gösterilir.
+- Orijinal teklif toplamı gösterilir.
+- Talebin kıyas para biriminde teklif tarihi kuru karşılığı gösterilir.
+- Güncel TCMB ile EUR ve USD karşılıkları ayrıca canlı gösterilir.
+- Navlun orijinal para biriminde gösterilir.
+
+Kıyaslama:
+- Kıyas Para Birimi: EUR / USD / TRY seçilebilir.
+- Farklı para birimlerindeki teklifler kur snapshot'ı ile aynı para birimine çevrilerek kıyaslanır.
+- Orijinal fiyat ve güncel kur karşılığı aynı hücrede ayrıca görünür.
+- "En uygun" ve otomatik seçim teklif tarihi snapshot kuru üzerinden yapılır.
+
+Müşteri teklifi:
+- Seçili tedarikçi alış maliyeti müşterinin teklif para birimine fxSnapshot ile dönüştürülür.
+- costOriginal / costCurrency ayrıca saklanır.
+
+Sipariş / Cari:
+- Tedarikçi teklifi TRY ise oluşan PO TRY olur.
+- Tedarikçi borcu TRY cari kartına işlenir.
+- Müşteri siparişi EUR/USD olabilir; tedarikçi carisi zorla müşteri para birimine çevrilmez.
+- Tedarikçi parti ödemesinde PO'nun kendi para birimi kullanılır.

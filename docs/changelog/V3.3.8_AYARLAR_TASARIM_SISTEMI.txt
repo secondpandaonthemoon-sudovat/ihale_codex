@@ -1,0 +1,14 @@
+ASAY ERP V3.3.8 — AYARLAR & TASARIM SİSTEMİ
+
+- Ayarlar sayfasına 6 bölümlü hızlı navigasyon eklendi.
+- Tema alanı yeniden tasarlandı; 7 tema, detaylı mini arayüz önizlemeleri ve kategori etiketleri eklendi.
+- Yeni Executive ve Ocean Trade temaları eklendi.
+- Görünüm ince ayarları sadeleştirildi; accent hex, radius ve font scale canlı değerleri eklendi.
+- Canlı arayüz mini örneği eklendi.
+- Tema ince ayarlarını varsayılana döndürme eklendi.
+- Bugün Aksiyon Gerekenler ayarları 3 adımlı açıklama ve daha okunur aksiyon kartlarına dönüştürüldü.
+- Aksiyon ayarları için Varsayılanlar / Hepsini Aç / Hepsini Kapat kontrolleri düzenlendi.
+- Talep Durum Renkleri 8 ayrı açıklamalı durum kartına dönüştürüldü.
+- Hex renk kodu ve canlı durum akışı önizlemesi eklendi.
+- Talep durum renkleri için Varsayılan Renkler butonu eklendi.
+- Mevcut ayar ID'leri ve kaydetme mantığı korunmuştur.

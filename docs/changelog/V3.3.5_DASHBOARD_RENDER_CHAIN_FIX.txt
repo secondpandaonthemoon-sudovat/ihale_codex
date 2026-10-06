@@ -1,0 +1,15 @@
+ASAY ERP V3.3.5 — DASHBOARD RENDER CHAIN FIX
+
+Kök neden:
+- poHtml() içindeki Kalan Borç alanı `r.currency` kullanıyordu.
+- poHtml() fonksiyonunda `r` tanımlı olmadığı için sipariş/PO bulunduğunda renderOrders() ReferenceError ile duruyordu.
+- rerenderAll() tek try/catch içindeydi ve renderOrders() updateDashboard()'dan önce çalışıyordu.
+- Böylece renderOrders() hata verdiğinde Dashboard DB'den gelen güncel state ile yeniden çizilmiyordu ve eski Aktif Üretim görüntüsü ekranda kalabiliyordu.
+
+Düzeltme:
+- `r.currency` -> `o?.currency || 'EUR'`
+- Dashboard rerenderAll() içinde ilk sıraya alındı.
+- Her render fonksiyonu ayrı try/catch ile izole edildi.
+- Bir modül hata verse bile Dashboard ve diğer modüller güncellenmeye devam eder.
+- Üst barda Build: V3.3.5 işareti eklendi.
+- Salt-okunur `dashboardOperationDiagnostics()` tanı fonksiyonu eklendi.

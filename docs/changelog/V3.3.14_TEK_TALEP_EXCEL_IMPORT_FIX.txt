@@ -1,0 +1,14 @@
+ASAY ERP V3.3.14 — TEK TALEP EXCEL İÇE AKTARMA
+
+Kullanıcı akışı:
+- Excel’den Tek Talep Yükle
+- Müşteri/Kurum uygulama içinde mevcut Cari Hesaplar DB listesinden seçilir.
+- Excel dosyası yalnızca TEK talebin kalemlerini içerir.
+- Excel alanları: Ürün/Hizmet Adı, Miktar, Birim, Marka/Model, Teknik Özellik/Açıklama.
+- Para Birimi, Son Teklif Tarihi, Teslim Şekli, Teslim Yeri, Öncelik ve Talep Açıklaması uygulama penceresinden girilir.
+- Talep durumu zorunlu olarak Fiyat Toplanıyor olur.
+- Excel aktarımı yeni cari oluşturmaz.
+- Müşteri seçimi mevcut partyKey üzerinden yapılır; isim benzerliği/harf farkı nedeniyle ikinci cari oluşmaz.
+- Müşteri listede yoksa önce Cari Hesaplar bölümünden yeni cari oluşturulmalıdır.
+- Talep şablonu artık dinamik API üretimi kullanmaz; statik ve doğrulanmış templates/Tek_Talep_Kalemleri_Sablonu.xlsx doğrudan indirilir.
+- Böylece önceki “Bir sorun oluştu / kuruluşunuza başvurun” şablon indirme hatası ortadan kaldırılmıştır.

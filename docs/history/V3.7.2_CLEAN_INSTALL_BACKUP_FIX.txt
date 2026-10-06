@@ -1,0 +1,9 @@
+V3.7.2 CLEAN INSTALL & BACKUP FIX
+- install.php statement-by-statement schema install.
+- Existing partial ASAY tables explicitly detected.
+- Clean install requires explicit SIFIRDAN_KUR confirmation.
+- Shared schema_manager centralizes dependency-safe drop/apply.
+- JSON/Full restore no longer recreates legacy table schemas; current schema is authoritative.
+- SQL restore imports data into current schema instead of replaying legacy CREATE/ALTER.
+- Login audit failure can no longer block a successful login.
+- Backup/restore features retained: JSON, SQL, full system, safety rollback, Google Drive.

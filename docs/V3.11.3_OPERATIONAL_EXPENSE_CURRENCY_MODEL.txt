@@ -1,0 +1,8 @@
+ASAY ERP V3.11.3
+
+1. Gerçek gider kendi gerçek para biriminde tutulur (TRY / EUR / USD).
+2. Gerçek ödeme seçilen Kasa/Banka hesabının para biriminde tutulur.
+3. Operasyon raporlama karşılığı talebin ana para biriminde snapshot olarak saklanır.
+4. TCMB/tarihsel kur varsayılandır; Manuel / Banka Kuru kullanılabilir.
+5. Gerçek gider, kasa çıkışı, operasyon karşılığı ve kullanılan kur sonradan yeniden değerlenmez.
+6. Ters kayıt kasa çıkışını ödeme dövizinde, cari hareketini gerçek gider dövizinde geri alır.

@@ -1,0 +1,7 @@
+ASAY ERP V3.7.7
+- Talep Merkezi kart render katmanı null/eksik alanlara dayanıklı hale getirildi.
+- Tek bir hatalı talep artık tüm listeyi boş bırakamaz.
+- requests/items/tags/paymentPlan normalize edilir.
+- supplier/document/order dizileri güvenli okunur.
+- Render hatasında kurtarma kartı gösterilir ve kayıt Düzenle ile açılabilir.
+- V3.7.6 gerçek Kasa/Banka entegrasyonu korunur.

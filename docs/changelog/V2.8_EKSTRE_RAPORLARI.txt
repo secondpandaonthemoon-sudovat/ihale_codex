@@ -1,0 +1,27 @@
+ASAY ERP V2.8 - Ekstre / Genel Raporlar
+
+1) Kasa & Banka Ekstresi
+- Tüm hesaplar veya seçili Kasa/Banka
+- Tarih aralığı
+- Arama
+- Arşivlenmiş hareketleri dahil et seçeneği
+- Hareket, giriş/çıkış ve güncel bakiye özeti
+- Yazdır / PDF
+- CSV / Excel uyumlu dışa aktarma
+
+2) Tüm Cariler Genel Ekstresi
+- Müşteri, Tedarikçi, Resmi Kurum, Özel Kurum, Borçlu, Alacaklı filtreleri
+- İletişim bilgileri, döviz, açık bakiye, vade, etiket, açıklama
+- Yazdır / PDF
+- CSV / Excel
+
+3) İhale & Talepler Genel Ekstresi
+- Durum ve son tarih filtreleri
+- Tedarikçi teklif sayısı
+- Kıyaslanan tutar
+- Müşteri teklifi
+- Beklenen kar
+- Evrak 0/4
+- Etiket ve açıklama
+- Yazdır / PDF
+- CSV / Excel

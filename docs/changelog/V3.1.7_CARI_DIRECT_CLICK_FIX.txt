@@ -1,0 +1,6 @@
+ASAY ERP V3.1.7
+- Cari tıklaması artık renderAccounts() yeniden çağırmıyor.
+- Firma adı yerine stabil numeric account group key kullanılıyor.
+- Tek tık: kartı açar + sağ cari detayını doğrudan doldurur.
+- Aynı karta tekrar tek tık: kartı kapatır + sağ detayı temizler.
+- Çift tıklama accountCards kapsayıcısında capture seviyesinde engellenir.

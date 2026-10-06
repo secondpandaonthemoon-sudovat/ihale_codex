@@ -1,0 +1,11 @@
+ASAY ERP V3.3.31 — KIYASLAMA GENEL TOPLAM €0,00 FIX
+
+- selectedSupplierId string/number farkları normalize edildi.
+- requestSuppliers requestId string/number farkları normalize edildi.
+- Kıyaslama tablosunda seçili tedarikçi ID karşılaştırması Number(...) ile yapılır.
+- Genel toplam hesabı:
+  1) Kalemde manuel seçili tedarikçi varsa onu kullanır.
+  2) Manuel seçim yoksa, ilgili kalemin kıyas para birimindeki en uygun teklifini kullanır.
+  3) Miktar x dönüştürülmüş birim fiyat hesaplanır.
+  4) Kullanılan tedarikçilerin navlunu bir kez eklenir.
+- Böylece seçim henüz state.selected içine yazılmamış olsa bile özet €0,00'a düşmez.

@@ -1,0 +1,26 @@
+ASAY ERP V3.3.24 — TEDARİKÇİ TEKLİF CRUD HARD FIX
+
+Sorunun iki ortak blokaj kaynağı giderildi:
+
+1) Entity lock bağımlılığı
+- Yeni Tedarikçi Teklifi / Düzenle / Sil artık entity_lock.php başarılı olmak zorunda değildir.
+- CRUD işlemleri doğrudan operations.php server transaction üzerinden yürür.
+- Böylece hosting'de entity_locks tablosu/lock endpoint sorunu olsa bile tedarikçi teklifleri çalışır.
+- Diğer modüllerin lock sistemi korunmuştur.
+
+2) Yanlış "aktif sipariş" algısı
+- Frontend requestOrder artık isActiveOperationalOrder() kullanır.
+- Backend has_live_order_for_request yalnız gerçekten aktif PO varsa true döner.
+- Teslim Edildi / İptal Edildi durumundaki PO'lar artık eski talebi sonsuza kadar kilitlemez.
+- open=false / financialCancelled / lost / cancelled kayıtlar canlı operasyon sayılmaz.
+
+Butonlar:
+- + Yeni Tedarikçi Teklifi
+- Düzenle
+- Sil
+type=button + stopPropagation ile request-card click davranışından ayrılmıştır.
+
+Silme:
+- server-side supplier_quote_delete korunur.
+- bağlı kıyaslama seçimleri temizlenir.
+- müşteri teklifi varsa maliyet yeniden hesaplanıp Taslak'a alınır.

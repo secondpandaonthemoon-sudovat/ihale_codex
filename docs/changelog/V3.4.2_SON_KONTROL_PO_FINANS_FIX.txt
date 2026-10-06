@@ -1,0 +1,10 @@
+ASAY ERP V3.4.2 — SON KONTROL / PO & FİNANS TUTARLILIK FIX
+
+1. PO durum/revizyon/ödeme bağlamı orderId + poId + poNo ile eşleştirilir.
+2. delivery_batch_collect içindeki tanımsız $po değişkeni kaldırıldı; müşteri tahsilatı sipariş para birimini kullanır.
+3. delivery_batch_supplier_pay PO para birimini kullanır; multi-currency tedarikçi borcu yanlış dövize düşmez.
+4. Tedarikçi ödeme modalı PO para birimini kullanır ve backend'e orderId/poNo gönderir.
+5. PO toplam/kalan borç UI gösterimi PO para birimine göre düzeltildi.
+6. Backup metadata uygulama sürümü V3.4.2.
+
+ŞEMA DEĞİŞİKLİĞİ YOK: V3.4.0 upgrade daha önce uygulandıysa tekrar upgrade gerekmez.

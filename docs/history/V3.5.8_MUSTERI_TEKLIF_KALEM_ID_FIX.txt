@@ -1,0 +1,17 @@
+ASAY ERP V3.5.8
+
+Müşteri teklif formunda satış fiyatı değiştirildiğinde satırların karışması düzeltildi.
+
+Kök neden:
+- Eski kayıtlarda duplicate itemUid değerleri bulunabiliyordu.
+- Teklif senkronizasyonu itemUid eşleşmesini itemId eşleşmesinden önce kullanıyordu.
+- Bu nedenle bir satırın satış fiyatı başka satıra taşınabiliyor veya son satır çoğalmış gibi görünebiliyordu.
+
+Düzeltme:
+- itemId birincil eşleştirme anahtarı yapıldı.
+- itemUid yalnız tekil olduğunda fallback olarak kullanılıyor.
+- Request item UID değerleri hem istemci hem sunucuda tekilleştiriliyor.
+- Eski duplicate UID verileri sync sırasında deterministik UID ile onarılıyor.
+- Satış fiyatı inputlarına açık item identity metadata eklendi.
+- Fiyat kaydı sırasında ilgili input geçici kilitleniyor.
+- Regresyon testi eklendi.

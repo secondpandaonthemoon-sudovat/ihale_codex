@@ -1,0 +1,14 @@
+ASAY ERP V3.3.17 — XLSX / ZIPARCHIVE BAĞIMSIZ OKUYUCU
+
+Neden ZipArchive görünüyordu?
+- .xlsx dosyaları teknik olarak ZIP paketidir; içinde XML dosyaları bulunur.
+- Eski import_preview.php XLSX'i yalnız PHP ZipArchive uzantısıyla açıyordu.
+- Shared hosting'de ZipArchive kapalıysa kullanıcı normal Excel yüklediği halde hata alıyordu.
+
+Düzeltme:
+- ZipArchive artık zorunlu değildir.
+- Varsa ZipArchive kullanılır.
+- Yoksa sistem ZIP central-directory yapısını saf PHP ile okuyup XLSX içindeki XML'i çıkarır.
+- Deflate sıkıştırması PHP zlib/gzinflate ile açılır.
+- Talep kalem Excel yükleme ve Cari Excel önizleme aynı yeni okuyucudan yararlanır.
+- Kullanıcı .xlsx dosyasını normal şekilde yüklemeye devam eder; CSV'ye dönüştürmesi gerekmez.

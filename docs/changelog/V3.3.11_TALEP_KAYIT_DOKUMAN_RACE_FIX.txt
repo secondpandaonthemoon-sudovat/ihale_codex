@@ -1,0 +1,18 @@
+ASAY ERP V3.3.11 — TALEP KAYIT / DOKÜMAN SENKRONİZASYON FIX
+
+Kök neden:
+- saveRequest(), saveDbState(true) sonucunu beklemeden modalı kapatıyordu.
+- Aynı anda autosave varsa saveDbState 'saving=true' nedeniyle yeni kaydı atlayabiliyordu.
+- Dosya yükleme API'si MySQL'de talebi bulamayınca 404 veriyordu.
+- Sonraki server-side işlem eski server state'ini döndürürse tarayıcıdaki geçici talep kaybolabiliyordu.
+
+Düzeltme:
+- DB save işlemleri saveQueue ile seri hale getirildi.
+- saveDbState true/false sonuç döndürüyor.
+- Yeni Talep ve Talep Düzenle MySQL kayıt sonucunu await ediyor.
+- DB kaydı kesinleşmeden modal kapanmıyor / başarı mesajı verilmiyor.
+- Kayıt başarısızsa geçici yeni kayıt rollback edilir fakat formdaki 13+ kalem korunur.
+- Dosya yükleme DB save kuyruğunun tamamlanmasını bekler.
+- 404 halinde kayıt bir kez garanti edilip yükleme tekrar denenir.
+- request_documents.php önce normalize requests tablosundan request_id doğrular.
+- Dosya yükleme başarısızlığı artık kaydedilmiş talebi etkilemez.

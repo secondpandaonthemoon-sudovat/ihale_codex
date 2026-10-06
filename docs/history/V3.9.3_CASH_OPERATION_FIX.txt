@@ -1,0 +1,7 @@
+ASAY ERP V3.9.3
+- Her Kasa/Banka kartına ayrı Ekstre butonu eklendi.
+- Tek hesap ekstresinde dönem açılışı, giriş, çıkış, yürüyen bakiye ve güncel bakiye gösterilir.
+- PO durum değişikliğinde Sipariş & Operasyon açık kart/scroll konumu korunur.
+- Tedarikçi ödeme modalı uygun döviz Kasa/Banka hesabı yoksa açık uyarı verir.
+- Ödeme öncesi cari, banka, para birimi ve bakiye istemci tarafında doğrulanır.
+- Backend kontrollü operasyon doğrulama hatalarını artık genel 'Operasyon tamamlanamadı' yerine kullanıcıya açık mesajla döndürür.

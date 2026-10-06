@@ -1,0 +1,13 @@
+ASAY ERP V3.1.8
+Kök neden:
+- showAccountGroup() fonksiyonu vardı fakat onun kullandığı statementFilters,
+  ensureAccountEntries(), statementRows(), getStatementData() ve computeStatement()
+  zinciri önceki cari refactor sırasında silinmişti.
+- Bu nedenle kart tıklaması showAccountGroup() içine giriyor ve ReferenceError ile duruyordu.
+
+Düzeltme:
+- Eksik cari ekstre helper zinciri geri yüklendi.
+- Cari aç/kapa numeric group key mantığı korunmuştur.
+- Detay render hataları artık sağ panelde görünür hata mesajı üretir.
+- Gerçek showAccountGroup + toggleAccountCardByKey fonksiyonları Node runtime'da sahte DOM ile
+  çalıştırıldı: kart açma, detay panelini doldurma ve ikinci tıklamada kapatma testi PASS.

@@ -1,0 +1,34 @@
+ASAY ERP V3.5.0 — STABİLİZASYON / GÜVENLİK / VERİ BÜTÜNLÜĞÜ
+
+Bu sürüm V3.4.7 üzerinde yapılan kapsamlı yazılım/tasarım denetiminin güvenli şekilde uygulanabilir bulgularını kapatır.
+
+KAPATILAN ANA BAŞLIKLAR
+- Server-side state filtreleme ve read/write yetki ayrımı
+- Görüntüleyici ve bilinmeyen rol fail-closed
+- Action-bazlı API izinleri
+- Client + server state sanitization / stored-XSS azaltımı
+- Finans bağlantılı cari hareketlerinde direct-edit engeli
+- Full restore storage staging + rollback + snapshot semantiği
+- File-backed ZIP restore: tam sistem yedeği fiziksel dosyaları belleğe komple açmadan stream edilerek geri yüklenir
+- State delta/patch kayıt ve top-level conflict tespiti
+- Kritik kullanıcı aksiyonlarında await edilen DB kayıtları
+- TCMB/FX güvenliği ve 1:1 fallback kaldırılması
+- PO state machine
+- Excel tek talepte bağımsız Konu Başlığı
+- Dedicated Supplier Directory API + opsiyonel supplier cari
+- Admin-only minimal health endpoint
+- API raw exception azaltımı
+- Doküman trash / restore / metadata edit / dosya bazlı açıklama
+- ZIP bomb limitleri + opsiyonel ClamAV
+- Client audit render_error desteği
+- Otomatik static/security smoke test paketi
+- CSS/JS asset ayrımı; index.php küçültüldü
+- XLSX columnWidths desteği
+- Eski changelog dosyaları docs/changelog altında toplandı
+- Modal focus/ESC/dirty-form erişilebilirlik iyileştirmeleri
+
+MİMARİ KORUMA
+app_state geriye uyumluluk kaynağı olarak korunur. V3.5.0 istemci tarafında yalnız değişen top-level modülleri PATCH eder ve modül hash'leri ile çakışma denetler. Normalize tablolar ve module_state aynaları korunur. Tam tablo-bazlı canonical mimariye geçiş ayrı major migration olarak yapılmalıdır; aynı release içinde zorlamak veri kaybı riski doğurur.
+
+CSP NOTU
+Uygulamadaki eski dinamik template'lerde çok sayıda inline onclick/onchange handler bulunmaktadır. XSS riski state sanitization ile önemli ölçüde azaltılmıştır; ancak strict CSP için bu handler'ların tamamının event delegation'a taşınması ayrı bir UI event-migration çalışmasıdır. V3.5.0 bunu zorla dönüştürmez.

@@ -1,0 +1,7 @@
+ASAY ERP V3.1.3
+- Ödeme seçeneklerine %50 Peşin / %50 Nakliye Öncesi eklendi.
+- Özel / Manuel seçiminde ödeme aşamaları ve oranları düzenlenebilir.
+- Manuel plan toplamı %100 değilse kayıt engellenir.
+- Hazır ödeme seçenekleri de paymentPlan olarak saklanır.
+- Yeni Talep / İhale ekranına Normal / Öncelikli / Acil öncelik seçimi eklendi.
+- Öncelik talep kartında görünür ve mevcut Öncelik etiketleriyle senkronlanır.

@@ -1,0 +1,30 @@
+ASAY ERP V3.7.2 CLEAN INSTALL BACKUP FULL - VERIFICATION
+
+Basis: V3.7.1 Cari Ekstre Actions Final
+Purpose: clean reinstall + robust DB backup/restore
+
+Verified:
+- All PHP files: syntax PASS
+- Existing Python regression suite: PASS
+- Security smoke: PASS
+- ZIP stream smoke: PASS
+- Account statement actions: PASS
+- Customer quote item identity: PASS
+- Check List dual currency: PASS
+- PDF parity: PASS
+- Stabilization V3.7 regression: PASS
+- Clean install / backup regression: PASS
+- schema.sql: 23 tables, FK dependency order PASS
+
+Behavior changes:
+1. install.php detects partial/old ASAY tables.
+2. Clean reset requires explicit SIFIRDAN_KUR confirmation.
+3. Schema is installed statement-by-statement with FK-safe ordering.
+4. Legacy .sql restore does NOT recreate legacy table schemas.
+5. Legacy SQL INSERT data is imported into the current schema.
+6. .asaydb / full backup restore also uses current schema as authority.
+7. Active Admin credentials are preserved during restore to avoid lockout.
+8. Login audit failure cannot block a successful login.
+9. Backup systems retained: ASAYDB, SQL, Full System ZIP, safety rollback, Google Drive.
+
+No database.local.php and no Google Drive token are included in the clean package.

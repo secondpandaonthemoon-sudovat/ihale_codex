@@ -1,0 +1,30 @@
+ASAY ERP V3.3.33 — KIYASLAMA EK MALİYETLER & GENEL TUTAR
+
+Kalem Bazlı Teklif Kıyaslama bölümüne eklendi:
+
+1. Seçilen En Uygun Genel Toplam
+- Sadece seçilen ürün/kalem maliyetlerini içerir.
+- KDV dahil efektif tedarikçi fiyatlarıyla hesaplanır.
+- Tedarikçi teklifinde kayıtlı navlun bilgi amaçlı ayrıca gösterilir; otomatik iki kez eklenmez.
+
+2. Operasyon & Teminat Giderleri
+Kullanıcı manuel girebilir:
+- Navlun
+- Gümrükçü
+- İndirme
+- İç Nakliye
+- Teminat
+
+3. Genel Tutar
+GENEL TUTAR =
+Seçilen En Uygun Genel Toplam
++ Navlun
++ Gümrükçü
++ İndirme
++ İç Nakliye
++ Teminat
+
+- Alanlar yazılırken Genel Tutar canlı güncellenir.
+- 'Giderleri Kaydet' ile veriler request.comparisonExpenses altında kalıcı saklanır.
+- Giderler kayıt anındaki kıyas para birimi ve FX snapshot ile saklanır.
+- Kıyas para birimi daha sonra değişirse kayıtlı giderler snapshot kuruyla yeni kıyas para birimine dönüştürülerek gösterilir.

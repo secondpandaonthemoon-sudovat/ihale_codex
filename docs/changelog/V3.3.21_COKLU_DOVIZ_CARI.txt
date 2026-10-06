@@ -1,0 +1,16 @@
+ASAY ERP V3.3.21 — MÜŞTERİ & TEDARİKÇİ CARİ ÇOKLU DÖVİZ
+
+- Aynı firma tek partyKey / ana cari kartı altında tutulur.
+- Alt hesaplar EUR / USD / TRY olarak bağımsızdır.
+- Yeni Cari ekranında aynı firma + tip tekrar girilirse yeni partyKey açmak yerine mevcut ana cari kartına seçilen döviz alt hesabı eklenir.
+- Vergi/Kurum No varsa eşleşmede önceliklidir.
+- Cari kart/detail ekranına + Döviz Hesabı butonu eklendi.
+- Mevcut döviz hesabı tekrar açılamaz.
+- Cari bakiyeleri farklı dövizler arasında muhasebe açısından netleştirilmez.
+- Borçlu/Alacaklı filtreleri her döviz hesabını bağımsız kontrol eder.
+- Cari silme kontrolü herhangi bir EUR/USD/TRY bakiyesi/hareketi varsa engeller.
+- Detay ekranında EUR/USD/TRY bakiyeleri ayrı gösterilir.
+- Güncel EUR karşılığı yalnız analiz amaçlı ayrıca gösterilir; cari kaydını değiştirmez.
+- Tedarikçi PO mutabakatı po.currency üzerinden hesaplanır.
+- PO kartında toplam/ödenen/kalan PO'nun kendi para birimiyle gösterilir.
+- Tedarikçi ödeme butonu aktif cari dövizine uyan açık PO'yu önceliklendirir.

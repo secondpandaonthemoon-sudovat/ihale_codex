@@ -1,0 +1,12 @@
+ASAY ERP V3.3.22 — TEDARİKÇİ TEKLİFİ YENİ / DÜZENLE / SİL FIX
+
+- Yeni ve Düzenle artık aynı requestId bazlı quote lock kullanır.
+- Modal açıkken Kaydet ikinci lock almaya çalışmaz; self-lock çakışması giderildi.
+- Yeni Tedarikçi Teklifi yeniden kaydedilebilir hale getirildi.
+- Düzenle yeniden çalışır.
+- Gelen Tedarikçi Teklifleri kartına Sil butonu eklendi.
+- supplier_quote_delete server-side operasyonu eklendi.
+- Silinen teklife bağlı kıyaslama seçimleri temizlenir.
+- Müşteri teklifi varsa maliyet yeniden hesaplanır, revizyon artırılır ve Taslak'a alınır.
+- Siparişe dönüşmüş talepte teklif silme/düzenleme koruması devam eder.
+- Var olmayan supplierId düzenlemesinde sessizce yeni teklif oluşturulması engellendi.

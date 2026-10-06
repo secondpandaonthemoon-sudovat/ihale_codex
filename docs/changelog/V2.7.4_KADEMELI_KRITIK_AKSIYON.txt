@@ -1,0 +1,17 @@
+ASAY ERP V2.7.4
+Kademeli kritik aksiyon renk sistemi eklendi.
+
+Örnek:
+- 5 gün ve altı: Yaklaşıyor / Sarı
+- 3 gün ve altı: Kritik / Kırmızı
+- 1 gün ve altı: Çok Kritik / Mor
+- Bugün: ayrı renk
+- Geçmiş: ayrı renk
+
+Aynı sistem:
+- Son Teklif / İhale Tarihleri
+- Müşteri Tahsilat Vadeleri
+- Tedarikçi Ödeme Vadeleri
+
+Sevkiyata Hazır operasyonlarda tarih eşiği bulunmadığı için tek vurgu rengi kullanılır.
+Dashboard kartlarında seviye rozeti, kalın renk şeridi, tonlu arka plan ve gölge kullanılır.

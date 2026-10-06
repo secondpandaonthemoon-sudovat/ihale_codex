@@ -1,0 +1,16 @@
+ASAY ERP V3.3.27 — TEDARİKÇİ TEKLİF SEKME KORUMA FIX
+
+Kök neden:
+- saveSupplierQuote() ve deleteSupplierQuote() işlem sonrası openRequestTab(rid,'suppliers') çağırıyordu.
+- Ancak openRequestTab() sekme adları haritasında 'suppliers' yoktu.
+- Bu nedenle buton bulunamıyor, reqTab() çalışmıyor ve yeniden render edilen talep kartı varsayılan Talep Kalemleri sekmesinde kalıyordu.
+
+Düzeltme:
+- openRequestTab sekme haritasına:
+  items -> Talep Kalemleri
+  suppliers -> Tedarikçi Teklifleri
+  eklendi.
+- Düzenle + Kaydet sonrası Gelen Tedarikçi Teklifleri sekmesi yeniden açılır.
+- Yeni Tedarikçi Teklifi kaydı sonrası aynı sekmede kalır.
+- Teklif Sil sonrası aynı sekmede kalır.
+- supplierReturnTabRequestId yardımcı durumu eklendi.

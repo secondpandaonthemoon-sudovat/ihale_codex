@@ -1,0 +1,38 @@
+ASAY ERP V3.4.7 — Kalem Bazlı Teklif Kıyaslama Excel
+
+Kıyaslama ekranına "Excel İndir" butonu eklendi.
+
+Excel içeriği:
+- Talep No
+- Konu Başlığı
+- Müşteri / Kurum
+- Kalem
+- Miktar ve Birim
+- Tedarikçi
+- Teklif Ref.
+- Teklif Para Birimi
+- Girilen Birim Fiyat
+- KDV Durumu ve KDV %
+- KDV Dahil Karşılık
+- Kıyas Para Birimi
+- Teklif kur snapshot'ına göre kıyaslanan birim fiyat
+- Kalem toplamı
+- Teknik uygunluk
+- SEÇİLİ / EN UYGUN durumu
+- Termin
+- Ödeme
+- Tedarikçi Navlunu
+- Kur Snapshot Tarihi
+
+Dosyanın sonunda:
+- Seçilen kalemler toplamı
+- Tedarikçi teklif navlunu (bilgi)
+- Manuel ek giderler
+- Ek giderler toplamı
+- Genel tutar
+
+XLSX görünümü:
+- Başlık satırı sabitlenir.
+- Otomatik filtre eklenir.
+- Kolon genişlikleri okunabilir biçimde ayarlanır.
+- Başlık ve özet satırları görsel olarak ayrılır.

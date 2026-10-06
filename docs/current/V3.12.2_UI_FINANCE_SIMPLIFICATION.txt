@@ -1,0 +1,7 @@
+ASAY ERP V3.12.2
+- Cari ve Kasa/Banka ekranlarında kullanıcıya Ters Kayıt gösterimi kaldırıldı; Düzenle/Sil kullanılır.
+- Audit/reversal mekanizması veri bütünlüğü için arka planda korunur; teknik karşı hareketler normal ekstrelerde gizlenir.
+- Kasa & Banka ana hareket tablosu yalnız seçili hesabın hareketlerini gösterir.
+- Giriş/Çıkış sütunu kaldırıldı; tutar + / - işaretiyle tek kolon gösterilir.
+- Tedarikçi ödeme ekranındaki stale client bakiye engeli kaldırıldı; bakiye sunucuda authoritative kontrol edilir.
+- Talep içi kıyaslama matrisi katlanabilir ve daha kompakt hale getirildi.

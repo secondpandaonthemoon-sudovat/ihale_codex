@@ -1,0 +1,5 @@
+ASAY ERP V3.7.4
+- Explicit redirect_uri is now respected exactly.
+- OAuth state is persisted before redirect and accepts recent valid state tokens.
+- Callback now reports Google error/access_denied, missing code/state, token exchange errors separately.
+- Does not weaken CSRF state validation.

@@ -1,0 +1,11 @@
+ASAY ERP V3.12.0
+
+- Teminat çözüm tarihi düzeltildi.
+- Cari hareket FX snapshot artık finans işleminin aynı tarihsel/manuel snapshotını kullanır.
+- Legacy parti tahsilat/ödeme ve legacy Ek Maliyet yazma yolları kapatıldı; geçmiş kayıtlar okunur ve terslenebilir.
+- Gerçek giderlerde kısmi ödeme, kalan tutar, fatura/belge no, fatura tarihi, vade ve bağlı evrak desteği eklendi.
+- Dashboard yaklaşan/geciken operasyon giderlerini aksiyon olarak gösterir.
+- Gerçek Ödemeler tablosunda kur kaynağı ve kullanılan kur görünür.
+- Cari Rolü alanı eklendi; mevcut tiplerle geriye uyumludur.
+- app_state açıkça canonical kaynak, normalize tablolar transactional mirror olarak işaretlendi.
+- test_write ve paket artıkları temizlendi; eski sürüm dokümanları docs/history altında toplandı.

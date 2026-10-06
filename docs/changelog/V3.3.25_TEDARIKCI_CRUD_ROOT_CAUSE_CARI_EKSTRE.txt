@@ -1,0 +1,25 @@
+ASAY ERP V3.3.25 — TEDARİKÇİ CRUD KÖK NEDEN + CARİ EKSTRE DÖVİZ FIX
+
+TEDARİKÇİ TEKLİFLERİ
+Kök neden:
+- renderSupplierDirectoryOptions() fonksiyonu dosyada yoktu.
+- openSupplierDirectoryModal() fonksiyonu yoktu.
+- saveSupplierDirectory() fonksiyonu yoktu.
+- syncSupplierDirectoryFromAccounts() fonksiyonu yoktu.
+- openSupplierQuote() ilk eksik fonksiyon çağrısında JavaScript ReferenceError ile duruyordu.
+- Bu nedenle Yeni ve Düzenle modalı hiç açılamıyordu.
+
+Düzeltme:
+- Dört tedarikçi dizin fonksiyonu geri eklendi.
+- Tedarikçi seçim listesi supplierDirectory + supplier cari hesapları + mevcut tekliflerdeki tedarikçilerden oluşturulur.
+- Yeni tedarikçi ekleme modalı yeniden çalışır.
+- Tedarikçi teklif açma/silme fonksiyonlarına görünür try/catch hata bildirimi eklendi.
+- CRUD server-side operations.php üzerinden devam eder.
+
+CARİ HESAP EKSTRESİ
+- Legacy aynı firma EUR/USD/TRY hesapları farklı partyKey taşıyorsa firma+tip+vergi no/ad ile aynı partyKey altında birleştirilir.
+- Ekstreye açık 'Ekstre Para Birimi' select eklendi.
+- EUR / USD / TRY ayrı ayrı seçilebilir.
+- Sekmeler de aktif kalır; mevcut olmayan döviz hesabı disabled görünür.
+- switchAccountCurrency seçilen ana cari kartını koruyarak doğru alt hesabın ekstresini açar.
+- PDF/Yazdır ve Excel/CSV seçili partyKey + para birimine bağlandı.

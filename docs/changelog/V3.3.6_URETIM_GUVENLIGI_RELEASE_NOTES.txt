@@ -1,0 +1,71 @@
+ASAY ERP V3.3.6 — ÜRETİM GÜVENLİĞİ / SON STABİLİZASYON
+
+1) Kasa/Banka virmanı server-side transaction'a taşındı.
+- cash_transfer action
+- idempotency
+- finance_journal
+- çift taraflı kasa hareketi
+- ters kayıt desteği
+
+2) Kasa/Banka bakiyesi artık mevcut hesap düzenleme ekranından değiştirilemez.
+- Mevcut hesapta bakiye salt okunur.
+- Bakiye Düzelt ayrı işlem olarak server-side journal kaydı oluşturur.
+- Yeni hesap açılış bakiyesi de journal kaydıyla oluşturulur.
+
+3) Cari kartını açmak artık bakiye değiştirmez.
+- Eski syncSupplierAccountFromPo mutasyonu kaldırıldı.
+- Aktif PO kalan toplamı yalnız salt-okunur mutabakat bilgisi olarak gösterilir.
+
+4) Kapalı/orphan/geçersiz PO ödeme koruması.
+- UI yalnız geçerli operasyon siparişlerini ödeme listesine alır.
+- Backend cash_movement seçilen PO'nun aktif/kazanılmış/geçerli siparişe ait olduğunu doğrular.
+- Kapalı/geçersiz PO durum ve revizyon işlemleri de engellenir.
+
+5) Talep silme server-side request_delete transaction'a taşındı.
+- Finans/cari hareketi varsa silme reddedilir.
+- Bağlı state kayıtları transaction içinde kaldırılır.
+- Dosya registry kayıtları soft-delete edilir; fiziksel dosya geri dönüş güvenliği için doğrudan yok edilmez.
+
+6) Doküman güvenliği.
+- Yükleme sırasında request_id'nin gerçekten mevcut olduğu doğrulanır.
+- Doküman silme frontend'i HTTP/API hata cevabını kontrol eder; başarısız silmede UI kaydı kaldırılmaz.
+
+7) Sipariş & Operasyon navigasyonu.
+- Bozuk go('quotes') kaldırıldı.
+- Müşteri Teklifi butonu doğrudan ilgili talebin Müşteri Teklifi sekmesini açar.
+- go() olmayan view çağrılarında güvenli şekilde toast verir.
+
+8) requestOrder() yalnız canlı/geçerli siparişi döndürür.
+- Kapalı/financialCancelled/kayıp/iptal sipariş geçmişi talep kıyaslamasını yanlış kilitlemez.
+
+9) Tedarikçi teklif / kıyaslama / müşteri teklif oluşturma kritik mutasyonları server operation'a taşındı.
+- supplier_quote_save
+- comparison_select
+- comparison_auto_best
+- customer_quote_create
+- entity lock + idempotency akışı korunur.
+
+10) Sipariş & Operasyon filtreleri.
+- Aktif
+- Tamamlanan
+- Kapalı / İptal
+- Tümü
+Varsayılan görünüm Aktif'tir.
+
+11) Miktar formatı tamamlandı.
+- Talep kalemleri
+- Tedarikçi kart/teklif ekranı
+- Parti oluşturma/düzenleme
+- Teslimat kartları
+- Sipariş mini özetleri
+Türkçe binlik ayırıcı formatQuantity() kullanır.
+
+12) Kullanılmayan renderQuotesPage legacy kodu kaldırıldı.
+
+13) Sistem build bilgisi üst bardan Ayarlar > Sistem Bilgisi bölümüne taşındı.
+
+14) Monolitik app_state teknik borcu tamamen sökülmedi; ancak kritik finans, PO, teklif/kıyaslama ve silme mutasyonları operations.php transaction katmanına taşınarak global client-state yazım riski ciddi biçimde azaltıldı. Normalized mirror tabloları korunur.
+
+15) Finans hareket listesinde tutarlar para birimine göre formatlanır.
+
+16) V3.3.5 Dashboard aktif operasyon ve render-chain düzeltmeleri korunmuştur.

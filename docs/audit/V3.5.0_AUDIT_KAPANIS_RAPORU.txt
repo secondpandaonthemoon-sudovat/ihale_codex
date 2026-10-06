@@ -1,0 +1,38 @@
+ASAY ERP V3.5.0 — DENETİM KAPANIŞ RAPORU
+
+KAPATILAN / GÜÇLENDİRİLEN MADDELER
+01 State yükleme rol/yetki bazlı filtrelenir.
+02 Görüntüleyici yazma yetkisi kapalıdır; read/write ayrıdır.
+03 API operasyonları action-bazlı explicit permission map kullanır.
+04 Server + client state sanitization ile stored-XSS yüzeyi azaltılmıştır.
+05 Finans bağlantılı cari hareketi doğrudan düzenlenemez; ters işlem gerekir.
+06-07 Full restore staging, rollback ve snapshot semantiği kullanır.
+08-09 Kritik saveDbState(true) çağrıları await/queue edilir; erken başarı mesajı kaldırılmıştır.
+10-11 Global full-save yerine top-level delta PATCH + key hash conflict uygulanmıştır.
+12 Cross-currency işlemler geçerli/teyitli FX olmadan çalışmaz.
+13 PO statüleri state-machine ile sınırlandırılır.
+14 Excel tek-talep importunda bağımsız Konu Başlığı zorunludur.
+15 Dedicated Supplier Directory API ve opsiyonel cari oluşturma vardır.
+16 Frontend ve backend bilinmeyen rollerde fail-closed davranır.
+17 Health endpoint Admin-only ve minimaldir.
+18 Production API hatalarında ham exception yayılımı azaltılmıştır.
+19-20 Dokümanlar trash/restore yaklaşımı ile geri alınabilir şekilde silinir.
+21 Tam sistem ZIP restore dosya-backed streaming çalışır; storage belleğe komple açılmaz; CRC doğrulanır.
+22 render_error client audit whitelist'e dahil edilmiştir.
+23 Static/security/ZIP smoke test paketi eklenmiştir.
+24 index.php CSS/JS dış dosyalara ayrılarak küçültülmüştür.
+27 Modal focus/ESC/dirty-form erişilebilirliği güçlendirilmiştir.
+28 Aksiyon hiyerarşisi/responsive yoğunluk CSS ile sadeleştirilmiştir.
+29 Doküman metadata/açıklama PATCH ile sonradan düzenlenebilir.
+30 Çoklu yüklemede dosya bazlı açıklama desteklenir.
+31 ZIP bomb limitleri + opsiyonel ClamAV taraması vardır.
+32 Tedarikçi rehberi ve cari oluşturma seçeneği ayrıştırılmıştır.
+33 XLSX exporter rapor-bazlı columnWidths alabilir.
+34 Eski changelog dosyaları docs/changelog altında tutulur.
+
+KONTROLLÜ MİMARİ KALINTILAR
+A) app_state halen geriye uyumluluk için canonical compatibility kaynağıdır. V3.5.0 full-state yazımı azaltıp delta PATCH kullanır. Tam tablo-canonical migrasyon, ayrı major veri migrasyonu olarak yapılmalıdır.
+B) JavaScript index.php'den assets/js/app.js'e çıkarıldı ancak tam domain bazlı modül ayrımı (requests/suppliers/finance vb.) ayrı refactor olarak kalır.
+C) Legacy HTML template'lerde inline onclick/onchange bulunduğu için CSP script-src içinde unsafe-inline halen gerekir. Server/client sanitization ve diğer CSP kısıtları aktif; strict nonce/event-delegation dönüşümü ayrı UI migrasyonudur.
+
+Bu üç konu aynı production stabilizasyon paketinde zorla dönüştürülmedi; veri/iş akışı regresyon riski, sağlayacağı kısa vadeli faydadan daha yüksektir.

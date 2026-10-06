@@ -1,0 +1,18 @@
+ASAY ERP V3.12.1 — State Revision / Finans Çakışma Stabilizasyonu
+
+Kök neden:
+- api/operations.php finans/operasyon işlemi app_state revision ve cash/accounts hashlerini değiştirirken,
+- aynı tarayıcıdaki saveDbState() autosave eski hash ile eşzamanlı patch gönderebiliyordu.
+- Bu durum gerçekte başka kullanıcı olmadan "Veri Çakışması (cash)" uyarısı üretiyordu.
+
+Düzeltme:
+1. saveDbState ve server-side authoritative mutation işlemleri tek seri kuyruğa alındı.
+2. Server operation öncesinde bekleyen yerel state patch aynı kuyruk içinde flush edilir.
+3. Operation sonucu dönen state + revision + keyHashes tek baseline olarak kabul edilir.
+4. supplier_directory.php gibi app_state revision artıran doğrudan mutation da aynı kuyruğa alındı.
+5. Gerçek iki oturum/kullanıcı aynı state anahtarını eşzamanlı değiştirirse 409 conflict koruması devam eder.
+6. Otomatik kayıt gerçek conflict korumasını bypass etmez ve finansal veri kaybı yaratmaz.
+
+Beklenen sonuç:
+- Tek kullanıcı/tek sekmede cash revision yarışından kaynaklanan sürekli conflict dialogları bitmelidir.
+- Arka arkaya finans işlemleri, ters kayıtlar ve Kasa/Banka hareketleri yeni revision/hash baseline ile devam eder.

@@ -1,0 +1,8 @@
+ASAY ERP V3.1.6
+Kök neden:
+- V3.1.4/V3.1.5 paketinde showAccountGroup() fonksiyonu yanlışlıkla tamamen silinmişti.
+- Kart tıklaması fonksiyonu çağırıyor fakat runtime'da ReferenceError oluştuğu için sağ detay paneli boş mesajda kalıyordu.
+Düzeltme:
+- showAccountGroup() tam cari profil + döviz sekmeleri + ekstre + hareket tablosu ile geri yüklendi.
+- Kart açıldıktan sonra render tamamlanınca detay fonksiyonu yeniden çağrılır.
+- Kapanınca detay paneli temizlenir.

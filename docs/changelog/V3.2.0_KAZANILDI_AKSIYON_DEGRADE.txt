@@ -1,0 +1,7 @@
+ASAY ERP V3.2.0
+Bugün Aksiyon Gerekenler:
+- Yaklaşan ihale / son teklif aksiyonları mevcut sarı-turuncu kritik renk sisteminde kaldı.
+- Kazanıldı + Evrak Eksik aksiyonları sarıdan yeşile doğru degrade kart olarak gösterilir.
+- Sol vurgu şeridi yeşildir.
+- Rozet yeşil tonundadır.
+Amaç: yaklaşan ihale ile kazanılmış iş operasyonunu görsel olarak net ayırmak.

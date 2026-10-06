@@ -1,0 +1,8 @@
+ASAY ERP V3.1.9
+Bugün Aksiyon Gerekenler:
+- Tarihli aksiyonlara büyük kalan gün rozeti eklendi.
+- Gelecek tarih: 5 GÜN / 3 GÜN / 1 GÜN vb.
+- Bugün: BUGÜN
+- Geçmiş tarih: 2 GÜN GECİKTİ vb.
+- Rozet rengi mevcut aksiyon kritiklik rengiyle otomatik senkron çalışır.
+- Son teklif/ihale tarihleri, müşteri tahsilat vadeleri ve tedarikçi ödeme vadelerinde uygulanır.

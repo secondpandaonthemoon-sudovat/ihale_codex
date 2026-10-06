@@ -1,0 +1,28 @@
+ASAY ERP V3.3.9
+
+1) Ayarlar düzeni
+- Firma Bilgileri + Google Drive Yedekleme + PDF/Evrak Varsayılanları aynı üst blokta.
+- Masaüstünde üç kolon, orta çözünürlükte Firma üstte ve iki araç altta, mobilde tek kolon.
+
+2) Cari Excel içe aktarma
+- .xlsx / .csv destekli.
+- Dosya önizleme, sütun eşleştirme ve kontrollü toplu aktarım.
+- Tekrar kontrolü: Vergi No + döviz veya Firma + Cari Tipi + döviz.
+- Şablon Excel indirme.
+- Açılış bakiyesi varsa cari hareketine 'Excel açılış bakiyesi' olarak işlenir.
+
+3) Talep Excel içe aktarma
+- .xlsx / .csv destekli.
+- Excel sütunları seçilebilir/eşleştirilebilir.
+- Durum zorunlu olarak Fiyat Toplanıyor (collecting).
+- Tedarikçi, teklif, sipariş veya evrak oluşturmaz.
+- Yalnız talep ve müşteri/cari bağlantısı kurar.
+- Tekrar kontrolü: Excel Referansı varsa referans; yoksa müşteri + başlık + tarih + döviz imzası.
+- Excel şablonu indirilebilir.
+
+4) FTP / Hosting kurulumu
+- config/database.local.php sunucuya özel DB bilgisi için otomatik oluşturulur.
+- install.php üzerinden host, port, DB, kullanıcı ve şifre girilebilir.
+- Göreceli URL yapısı korunur; localhost'a sabit site URL'si yoktur.
+- Google Drive redirect URI mevcut domain üzerinden otomatik algılanır.
+- Shared hosting DB oluşturma yetkisi yoksa mevcut DB'ye bağlanmayı destekler.

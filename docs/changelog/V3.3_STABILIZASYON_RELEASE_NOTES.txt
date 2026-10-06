@@ -1,0 +1,87 @@
+ASAY ERP V3.3.0 — STABİLİZASYON
+
+1. FİNANS / TRANSACTION
+- Genel Kasa & Banka tahsilat ve ödemeleri api/operations.php üzerinden MySQL transaction ile işlenir.
+- Tedarikçi genel ödemeleri server-side çalışır.
+- Idempotency anahtarı ile tekrar/double-click koruması vardır.
+- Genel müşteri tahsilatı ve tedarikçi ödemesi finance_journal'a kaydedilir.
+- Genel finans işlemleri de Ters Kayıt ile geri alınabilir.
+- Partili teslimat aktifse genel ödeme/tahsilat ile parti finansı bypass edilemez.
+
+2. PARTİLİ TESLİMAT / PO
+- Partili teslimat bulunan siparişte Kısmi Teslimat ve Teslim Edildi PO durumları manuel seçilemez.
+- Bu durumlar teslimat partilerinden hesaplanır.
+- Parti düzenleme/silme/iptal sonrası navlun dağılımı yeniden normalize edilir.
+- İrsaliye/CMR/AWB/BL referansı, taşıyıcı, araç/konteyner ve teslim alan alanları eklendi.
+- PO revizyon geçmişi ve revizyon açıklaması eklendi.
+
+3. MÜŞTERİ ÖDEME PLANI
+- Talepteki %30/%70, %50/%50 veya manuel ödeme planı siparişe gerçek paymentSchedule olarak aktarılır.
+- Her aşamada yüzde, tutar, tahsil edilen, kalan ve durum tutulur.
+- Ön ödeme ve parti tahsilatı ödeme aşamalarına otomatik dağıtılır.
+- Ters kayıt ödeme planını da geri alır.
+- Teklif toplamı değişirse ödeme planı yeniden fiyatlanır.
+- Daha önce tahsil edilmiş aşamanın altına düşen revizyon engellenir.
+
+4. ÇOK KULLANICILI ÇALIŞMA / ENTITY LOCK
+- Talep, teklif ve cari düzenleme ekranlarında gerçek kayıt kilidi kullanılır.
+- Kilit 5 dakika geçerlidir ve açık ekranlarda periyodik yenilenir.
+- Başka kullanıcı tarafından düzenlenen kayıt ikinci kullanıcıya kilitli görünür.
+- Kilit API'si yetki kontrolü yapar.
+- Genel state revision koruması korunmuştur.
+
+5. CARİ / PARTY KEY
+- Cari gruplaması firma adına değil kalıcı partyKey'e taşındı.
+- Aynı isimli farklı şirketlerin ayrı cari kartları tutulabilir.
+- Request kayıtları customerPartyKey taşır.
+- Çoklu döviz hesapları aynı partyKey altında gruplanır.
+- Cari hareketlerinde işlem ID, kullanıcı, tarih ve kaynak referans görünür.
+- Bakiyesi veya hareket geçmişi olan cari doğrudan silinemez.
+
+6. MYSQL TEK İŞ VERİSİ KAYNAĞI
+- Cari, şirket ayarları, roller ve uygulama kimliği localStorage'dan geri yüklenmez.
+- İş verisinin kalıcı kaynağı MySQL/app_state'tir.
+- localStorage yalnız UI tercihi ve TCMB son başarılı kur cache'i için kullanılır.
+- Autosave güvenlik periyodu 10 saniyeye çıkarıldı; olay bazlı kayıtlar devam eder.
+- app_state güvenli boyut sınırı 32 MB oldu.
+- Normalized requests state ID'lerini birebir korur.
+- Normalized request/quote/order/PO/cash tabloları transaction sonrasında anlık senkronlanır.
+
+7. DOKÜMAN GÜVENLİĞİ
+- Doküman listeleme ve indirme için Evrak yetkisi zorunlu.
+- İndirme öncesinde bağlı talebin halen mevcut olduğu doğrulanır.
+- Güvenli storage-path doğrulaması korunmuştur.
+
+8. TEKLİF / REVİZYON
+- Müşteri teklif revizyonu server-side operation üzerinden yapılır.
+- Gönderildi durumu server-side operation üzerinden yapılır.
+- Siparişe dönüşmüş teklif için yanlışlıkla yeni müşteri teklif revizyonu açılması engellenir.
+- Eski client-side sipariş oluşturma akışı kaldırıldı.
+
+9. DASHBOARD / AKSİYON MERKEZİ
+- Acil ve Öncelikli talepler aksiyon sıralamasında öne alınır.
+- Kazanıldı + Evrak Eksik işleri için varsayılan 3 günlük evrak hedef tarihi oluşturulur.
+- Tüm Aksiyonlar ekranı eklendi.
+- Aksiyonlara Sorumlu Ata, +1 Gün Ertele ve Tamamlandı işlemleri eklendi.
+- Kalan gün / gecikme sayaçları korunmuştur.
+
+10. PDF / EVRAK STÜDYOSU
+- Duplicate checklistTableHtml kaldırıldı.
+- Serbest metin kutusu ekleme/sürükleme/düzenleme/silme eklendi.
+- Serbest metin konumları şablonla kaydedilir.
+- Özel sütun değerleri satır bazında doğrudan önizlemede düzenlenebilir.
+- Belgelerde UID ve revision alanı eklendi.
+- commercial_documents normalized tablosu eklendi; belge no + revizyon unique kontrolü vardır.
+- Yazdırma işlemleri yeni pencere/pop-up yerine gizli iframe ile yapılır.
+
+11. HATA / AUDIT
+- window error ve unhandledrejection olayları client audit loguna gider.
+- Finansal ters kayıtlar audit edilir.
+- PO revizyonları ve entity lock acquire işlemleri audit edilir.
+
+GÜNCELLEME
+1. Mevcut uygulama klasörünüzün yedeğini alın.
+2. V3.3.0 dosyalarını mevcut uygulama üzerine aktarın.
+3. Admin hesabı ile upgrade.php dosyasını bir kez çalıştırın.
+4. Güncelleme tamamlandıktan sonra tarayıcıda Ctrl+F5 ile zorla yenileyin.
+5. upgrade.php kullanımından sonra güvenlik için dosyayı erişime kapatmanız/yeniden adlandırmanız önerilir.

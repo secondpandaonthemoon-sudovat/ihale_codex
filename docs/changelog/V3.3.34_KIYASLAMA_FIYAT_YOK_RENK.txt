@@ -1,0 +1,8 @@
+ASAY ERP V3.3.34 — KIYASLAMA FİYAT YOK VURGUSU
+
+- Kıyaslama tablosunda fiyat girilmemiş tedarikçi-kalem hücreleri artık farklı renkte gösterilir.
+- Fiyat olmayan hücrelere no-price sınıfı eklendi.
+- Açık temada hafif kırmızı arka plan ve kırmızı sınır kullanılır.
+- Koyu temada okunabilir kontrast korunur.
+- 'Fiyat Yok' etiketi pill/badge olarak belirgin gösterilir.
+- Fiyatı olan / en uygun / seçili hücre davranışları değiştirilmedi.

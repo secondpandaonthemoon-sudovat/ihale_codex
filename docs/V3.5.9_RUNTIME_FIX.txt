@@ -1,0 +1,5 @@
+ASAY ERP V3.5.9
+- Global esc() runtime helper eklendi. Talep Merkezi render ve TCMB refresh sırasında oluşan "esc is not defined" hatası giderildi.
+- TCMB başarılı yanıtından sonra renderRequests hatası nedeniyle yanlış "proxy bağlantısı kurulamadı" mesajı oluşması engellendi.
+- Sidebar menü ikon rengi SVG stroke seviyesinde zorlandı; Ayarlar > Menü İkon Rengi artık aktif/hover durumlarında da uygulanır.
+- Sipariş & Operasyon PO kartlarına tedarikçi bazlı sabit kimlik rengi ve renk kutucuğu eklendi. Durum renkleri ayrıca korunur.

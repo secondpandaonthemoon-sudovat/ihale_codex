@@ -1,0 +1,15 @@
+ASAY ERP V2.9.2
+Tüm talep durumları ayrı görsel renge bağlandı:
+
+- Taslak: Gri
+- Fiyat Toplanıyor: Mavi
+- Kıyaslamaya Hazır: Turkuaz
+- Müşteri Teklifi Hazır: Indigo
+- Teklif Gönderildi: Mor
+- Kazanıldı: Yeşil
+- Kaybedildi: Koyu gri
+- İptal Edildi: Kırmızı
+- Kazanıldı + Evrak Eksik: Amber/Turuncu özel uyarı
+
+Talep durum rengi kart zemin/çerçevesinde, deadline kritiklik rengi sol şeritte gösterilir.
+Durum select alanı da seçili duruma göre renklendirilir.

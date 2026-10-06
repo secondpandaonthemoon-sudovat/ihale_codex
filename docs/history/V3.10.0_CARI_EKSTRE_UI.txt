@@ -1,0 +1,6 @@
+ASAY ERP V3.10.0
+- Cari hesap ekstrelerinden İşlem ID ve Kullanıcı sütunları kaldırıldı.
+- Tek cari ekranı ve yazdırma görünümü sadeleştirildi.
+- Tüm Cariler Genel Ekstresi gerçek hareketleri göstermeye devam eder.
+- Negatif net cari bakiye (bizim borçlu olduğumuz hesap) satırları kırmızı vurgulanır.
+- Genel rapora Durum sütunu eklendi: BORÇLUYUZ / ALACAKLIYIZ / DENGEDE.

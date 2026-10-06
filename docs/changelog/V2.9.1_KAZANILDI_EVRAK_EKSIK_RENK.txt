@@ -1,0 +1,6 @@
+ASAY ERP V2.9.1
+- Kazanıldı olup 4/4 ticari evrak seti tamamlanmamış talepler Talep Merkezi'nde turuncu/amber vurguyla ayrılır.
+- Kartta "EVRAK EKSİK" rozeti görünür.
+- Evrak seti 4/4 tamamlanınca kart otomatik yeşil/tamamlanmış görünüme döner.
+- Deadline rengi sol şeritte kalır; evrak uyarısı kart arka planı/çerçevesinde görünür.
+- Dashboard aksiyonlarına "Kazanıldı · Evrak Eksik" kayıtları eklenir.

@@ -1,0 +1,15 @@
+ASAY ERP V3.3.29 — TALEP DOKÜMAN KÜTÜPHANESİ DB SENKRON FIX
+
+Kök neden:
+- Dosya yükleme api/request_documents.php ile storage/request-docs ve file_registry tablosuna kaydediliyordu.
+- Fakat Talep Doküman Kütüphanesi yalnız state.requestAttachments dizisini render ediyordu.
+- Sayfa/state yenilendiğinde file_registry tekrar okunmadığı için sunucuda bulunan dosya kütüphanede görünmeyebiliyordu.
+
+Düzeltme:
+- request_documents.php GET desteği eklendi.
+- GET, file_registry içindeki silinmemiş dokümanları döndürür.
+- Dokümanlar sayfası açıldığında file_registry yeniden okunur.
+- Yükleme tamamlanınca liste DB'den tekrar çekilir.
+- Silme tamamlanınca liste DB'den tekrar çekilir.
+- requestId eşleştirmeleri Number(...) ile güvenli hale getirildi.
+- file_registry doküman listesi için kalıcı gerçek kaynak olarak kullanılır.

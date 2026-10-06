@@ -1,0 +1,9 @@
+ASAY ERP V3.3.18 — XLSX SAF PHP OKUYUCU
+
+- ZipArchive zorunluluğu kaldırıldı.
+- SimpleXML zorunluluğu da kaldırıldı.
+- XLSX ZIP yapısı saf PHP ile okunur.
+- Deflate için standart PHP zlib/gzinflate kullanılır.
+- XLSX içindeki sharedStrings.xml ve sheet1.xml özel, sınırlı ve güvenli parser ile okunur.
+- Kullanıcının kalem_ekle.xlsx örneği ve uygulamanın kendi Talep Kalemleri şablonu gerçek parser testiyle doğrulanmıştır.
+- Kullanıcı normal .xlsx yüklemeye devam eder; CSV dönüşümü gerekmez.

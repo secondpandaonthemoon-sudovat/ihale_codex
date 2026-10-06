@@ -1,0 +1,11 @@
+ASAY ERP V3.3.28 — TEDARİKÇİ KALEM BİRİM FİYATI TAM HASSASİYET
+
+- Backend round(...,4) kaldırıldı.
+- Birim fiyat canonical decimal string olarak saklanır.
+- Kullanıcının girdiği ondalık basamaklar korunur.
+- Düzenle ekranında fiyat 2 haneye zorlanmaz.
+- 1,23456789 -> 1.23456789 olarak saklanır ve tekrar 1,23456789 gösterilir.
+- 0,0012500 -> 0.0012500 olarak saklanır; son sıfırlar dahil korunur.
+- Türkçe virgüllü ve noktalı girişler normalize edilir.
+- Gelen Tedarikçi Teklifleri satırında Birim Fiyat tam hassasiyetle gösterilir.
+- Kalem/genel toplamlar normal para gösteriminde kalır.

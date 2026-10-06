@@ -1,0 +1,19 @@
+ASAY ERP V3.3.3 — GERÇEK VERİYE BAĞLI AKSİYON MERKEZİ
+
+- Manuel "Tamamlandı" butonu tamamen kaldırıldı.
+- Önceki sürümlerde manuel completed/completedAt ile gizlenmiş aksiyon override'ları temizlenir.
+  Gerçek işi halen açık olan aksiyon tekrar görünür.
+- Aksiyonlar yalnız gerçek veri değiştiğinde otomatik kapanır:
+  * Kazanıldı + Evrak Eksik -> 4/4 ticari evrak tamamlanınca.
+  * Müşteri Tahsilatı -> açık müşteri alacağı 0 olduğunda.
+  * Tedarikçi Ödemesi -> açık tedarikçi borcu 0 olduğunda.
+  * Sevkiyata Hazır -> PO/operasyon durumu Sevkiyata Hazır olmaktan çıktığında.
+  * İhale / Son Teklif -> talep Gönderildi, Kazanıldı, Kaybedildi veya İptal durumuna geçtiğinde.
+- Kullanıcıda yalnız:
+  * İlgili Kayda Git
+  * Sorumlu Ata
+  * +1 Gün Ertele / Ertelemeyi Kaldır
+  bulunur.
+- Erteleme aksiyonu silmez; yalnız belirtilen tarihe kadar Dashboard'dan gizler.
+- Tüm Aksiyonlar ekranında "Geçmiş / Otomatik Kapanan Aksiyonlar" bölümü eklendi.
+- Otomatik kapanan aksiyonlar kapanma zamanı ve nedeni ile geçmişe alınır.

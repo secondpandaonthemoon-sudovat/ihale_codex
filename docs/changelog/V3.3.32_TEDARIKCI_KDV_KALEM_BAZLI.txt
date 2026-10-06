@@ -1,0 +1,32 @@
+ASAY ERP V3.3.32 — TEDARİKÇİ TEKLİFLERİ KALEM BAZLI KDV
+
+Her tedarikçi teklif kaleminde:
+- Girilen Birim Fiyat
+- KDV Durumu: KDV Hariç / KDV Dahil
+- KDV Oranı (%)
+- Net Birim
+- KDV Tutarı
+- KDV Dahil Birim Fiyat
+otomatik hesaplanır.
+
+Hesap:
+- KDV Hariç: KDV Dahil = Girilen Fiyat × (1 + KDV% / 100)
+- KDV Dahil: Girilen fiyat nihai maliyettir; net fiyat geriye doğru hesaplanır.
+- KDV %0 desteklenir.
+
+Veri modeli:
+- offerBase[itemId] = kullanıcının girdiği fiyat (tam hassasiyet korunur)
+- vat[itemId] = {mode, rate}
+- offers[itemId] = backend tarafından hesaplanan KDV dahil efektif maliyet
+
+Kıyaslama:
+- En Uygun hesabı KDV dahil gerçek maliyet üzerinden yapılır.
+- Seçilen En Uygun Genel Toplam da KDV dahil maliyet üzerinden hesaplanır.
+- Döviz dönüşümü KDV dahil efektif maliyete uygulanır.
+
+Gelen Tedarikçi Teklifleri:
+- Girilen fiyat + KDV durumu/oranı
+- KDV Dahil Birim Fiyat
+- KDV Dahil Kalem Toplamı
+- Genel Toplam KDV Dahil
+gösterilir.

@@ -1,0 +1,8 @@
+ASAY ERP V3.4.4 — Talep / İhale Kaydet ve Devam Et FIX
+
+- Düzenlenen talep kaydedildikten sonra yalnız Talep Merkezi’ne dönme hatası giderildi.
+- Kaydedilen request ID doğrudan hedeflenir.
+- Kaydet ve Devam Et sonrası aynı talep kartı açılır.
+- Talepte kalem varsa Tedarikçi Teklifleri sekmesine geçilir; kalem yoksa Talep Kalemleri sekmesi açılır.
+- Aktif arama/filtre kaydedilen talebi gizliyorsa devam akışı filtreleri temizleyip doğru kaydı açar.
+- Yeni talepte yanlışlıkla listenin ilk kartını açma davranışı kaldırıldı.

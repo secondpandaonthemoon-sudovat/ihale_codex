@@ -1,0 +1,19 @@
+ASAY ERP V2.7 Stabilizasyon
+
+- Cari filtreleri: Borçlu / Alacaklı
+- Deadline renkleri korunur: yeşil >3 gün, sarı 1-3 gün, kırmızı bugün/gecikmiş
+- Fresh install demo operasyon verisi kaydetmez
+- Global benzersiz Talep/Kalem ID üretimi
+- Finans hareketleri silinmez, arşivlenir
+- Kasa/Banka ve Cari silme finans geçmişi varsa engellenir
+- Tedarikçi ödemesinde PO seçimi
+- Finans hareketi olan talep fiziksel silinmez; iptal statüsü kullanılır
+- Siparişe dönüşmüş talep doğrudan Kaybedildi/İptal Edildi yapılamaz
+- Dashboard satış/alış yalnız siparişe dönüşen işler üzerinden hesaplanır
+- Açık teklifler Kaybedildi/İptal Edildi/Kazanıldı hariç hesaplanır
+- Normalize MySQL mirror tabloları her kayıt sonrası current state ile yeniden kurulur
+- Belge Sıfırla seçili talep kalemlerini kullanır
+- Hızlı Teklif Kıyasla sabit RFQ ID kullanmaz
+- Evrak numarası silinen kayıt sonrası tekrar etmez
+- Kaydet aksiyonları anında MySQL state save çağırır
+- Tek autosave timer

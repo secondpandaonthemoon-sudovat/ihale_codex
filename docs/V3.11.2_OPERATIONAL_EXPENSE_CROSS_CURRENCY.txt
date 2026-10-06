@@ -1,0 +1,7 @@
+ASAY ERP V3.11.2
+- Operasyon giderinin muhasebe para birimi ile ödeme Kasa/Banka para birimi ayrıldı.
+- Örn. 1.000 EUR gider TL kasadan TCMB kuru ile ödenebilir.
+- Cari gider ve gerçekleşen maliyet EUR kalır; Kasa/Banka gerçek TL tutarı kadar azalır.
+- Ödeme ekranında gerçek kasa çıkışı ve kullanılan TCMB kuru önizlenir.
+- Geçmiş tarih seçilirse tarihsel TCMB kuru kullanılmaya çalışılır.
+- Ters kayıt aynı gerçek kasa tutarını ve kasa para birimini geri yükler.

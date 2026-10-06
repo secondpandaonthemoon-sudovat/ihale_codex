@@ -1,0 +1,12 @@
+ASAY ERP V3.3.7 — PDF & EVRAK STÜDYOSU KOMPAKT YERLEŞİM
+
+- PDF önizleme ekran ölçeği küçültüldü.
+  * Dikey A4 fit önizleme üst sınırı: %60
+  * Yatay A4 fit önizleme üst sınırı: %52
+- Gerçek A4 / Yazdır / PDF ölçüleri değiştirilmedi.
+- Önizleme paneli sağ tarafta sticky hale getirildi.
+- Editör tarafı genişletildi.
+- PDF Tablo Sütunları ve PDF Blok Sırası logo/kaşe ve Packing List alanlarından önceye taşındı.
+- İki yönetim alanı masaüstünde yan yana kompakt kartlar halinde gösteriliyor.
+- Küçük ekranlarda responsive olarak tek kolona geçiyor.
+- Önizleme paneline açık bir 'A4 Önizleme' başlığı ve baskı ölçüsünün değişmediğini belirten bilgi eklendi.

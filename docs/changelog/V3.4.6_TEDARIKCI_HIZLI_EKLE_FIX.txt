@@ -1,0 +1,20 @@
+ASAY ERP V3.4.6 — Tedarikçi Teklifi / Yeni Tedarikçi Ekle
+
+Kök değişiklik:
+- Tedarikçi Teklifi içindeki "+ Yeni Tedarikçi Ekle" artık ikinci/nested modal açmaz.
+- Aynı Yeni Tedarikçi Teklifi penceresinin içinde Hızlı Tedarikçi Ekle paneli açılır.
+- Böylece backdrop, focus ve z-index kaynaklı modal üstüne modal sorunu tamamen devreden çıkarılır.
+
+Akış:
+1) Yeni Tedarikçi Teklifi açılır.
+2) + Yeni Tedarikçi Ekle tıklanır.
+3) Hızlı ekleme paneli aynı modal içinde görünür.
+4) Firma adı, yetkili, e-posta, telefon, ülke, not girilir.
+5) "Tedarikçiyi Ekle ve Seç" tıklanır.
+6) state.supplierDirectory güncellenir ve DB state kaydedilir.
+7) Kayıt başarılıysa yeni tedarikçi sqSupplier seçicisinde otomatik seçilir.
+8) Teklif formu açık kalır; fiyat girmeye devam edilir.
+9) DB save başarısızsa local değişiklik geri alınır.
+
+Not:
+- Eski supplierDirectoryModal kodu sistemde diğer kullanım ihtimalleri için korunur, ancak teklif modalındaki buton artık onu kullanmaz.

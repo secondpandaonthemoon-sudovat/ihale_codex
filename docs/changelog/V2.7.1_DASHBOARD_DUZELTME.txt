@@ -1,0 +1,7 @@
+ASAY ERP V2.7.1
+- Operasyon Merkezi statik €482.000 ve '1 sevkiyata hazır' metinleri kaldırıldı.
+- Açık teklif hacmi EUR/USD/TRY bazında gerçek açık tekliflerden hesaplanır.
+- Sevkiyata hazır sayısı gerçek PO durumlarından hesaplanır.
+- Bugün Aksiyon Gerekenler: yaklaşan/geciken talep/ihale son tarihleri, sevkiyata hazır operasyonlar ve cari vade tarihleri.
+- Cari kartlara Vade Tarihi alanı eklendi. Vadesi 7 gün içinde olan borç/tahsilatlar Dashboard aksiyonlarına düşer.
+- Aktif Üretim & Teslimat tablosu yalnız aktif PO'ları gösterir.

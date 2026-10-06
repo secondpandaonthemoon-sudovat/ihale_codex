@@ -1,0 +1,18 @@
+ASAY ERP V3.3.30 — KIYASLAMA SEÇİLEN EN UYGUN GENEL TOPLAM
+
+Kıyaslama ekranına özet panel eklendi:
+- Seçilen En Uygun Genel Toplam
+- Seçilen Kalemler Ara Toplamı
+- Navlun Toplamı
+- Kıyas Para Birimi
+- Seçili kalem sayısı / toplam kalem
+- Seçili tedarikçi sayısı
+
+Hesap:
+1. Her seçili kalem için seçilen tedarikçinin birim fiyatı alınır.
+2. Birim fiyat teklif tarihi FX snapshot'ı ile seçilen Kıyas Para Birimine çevrilir.
+3. Miktar × dönüştürülmüş birim fiyat hesaplanır.
+4. Seçilen tedarikçilerin navlunu her tedarikçi için yalnız 1 kez eklenir.
+5. Genel Toplam = Kalemler Ara Toplamı + Navlun.
+
+EUR / USD / TRY kıyas para birimi değiştiğinde özet de otomatik aynı para biriminde yeniden hesaplanır.

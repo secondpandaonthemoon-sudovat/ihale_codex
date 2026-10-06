@@ -1,0 +1,7 @@
+ASAY ERP V3.3.1
+- Tüm İhale & Müşteri Talepleri: Kazanıldı + Evrak Eksik kartları Dashboard ile aynı sarı→yeşil degrade görünüme geçti.
+- Evraklar 4/4 tamamlandığında kart, Ayarlar > Durum Renkleri > Kazanıldı için seçilmiş rengi kullanır.
+- Para formatı EUR/USD/TRY için 2 ondalık basamağa standardize edildi.
+- € 1,40 artık € 1 olarak yuvarlanmaz.
+- Türkçe virgüllü ve noktalı parasal girişleri destekleyen parseMoneyInput() eklendi.
+- Müşteri teklif toplamı ve satış birim fiyat alanları decimal inputmode ile virgüllü girişe uygun hale getirildi.

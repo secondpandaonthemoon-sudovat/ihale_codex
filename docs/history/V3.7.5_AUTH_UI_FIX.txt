@@ -1,0 +1,6 @@
+ASAY ERP V3.7.5
+- Merkezi sistem yönetimi yetkisi: Admin rolü VEYA settingsWrite yetkisi.
+- Google Drive / DB yönetimi eski role-string kontrolüyle permission matrisi arasında çakışmaz.
+- Checkbox/radio kontrolleri text input stilinden ayrıldı; kenara taşma ve yüksek kutu sorunu düzeltildi.
+- V3.7.4 OAuth state/redirect düzeltmeleri korunur.
+- Temiz kurulum V3.7.3 MariaDB 10.4 düzeltmeleri korunur.

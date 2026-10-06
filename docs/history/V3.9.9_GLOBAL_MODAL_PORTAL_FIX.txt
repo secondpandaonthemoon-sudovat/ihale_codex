@@ -1,0 +1,7 @@
+ASAY ERP V3.9.9
+- Tüm .modal-backdrop pencereleri document.body altına portal edilir.
+- Sidebar/app container stacking context artık modal konumunu etkileyemez.
+- Tüm modallar desktop ve mobilde viewport merkezinde açılır.
+- appConfirm/appPrompt sistem dialogları document.body altında ve modal katmanının üzerinde kalır.
+- Dinamik oluşturulan yeni modallar MutationObserver ile otomatik portal edilir.
+- Ters Kayıt, silme/onay, ödeme, cari, teminat, evrak, Excel ve diğer modal akışları aynı merkezi altyapıyı kullanır.

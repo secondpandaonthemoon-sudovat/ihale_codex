@@ -1,0 +1,38 @@
+ASAY ERP V3.4.1 — CARİ EKSTRE DÜZENLE + PO DURUM / JSON HATA FIX
+
+1) MÜŞTERİ & TEDARİKÇİ CARİ — CARİ HESAP EKSTRESİ
+- Ekstre satırlarına “Düzenle” butonu eklendi.
+- Düzenlenebilir alanlar:
+  * Tarih
+  * Borç / Alacak yönü
+  * Tutar
+  * Referans
+  * Açıklama
+- Değişiklik server-side account_entry_update operasyonu ile yapılır.
+- Cari requestOpen / açık bakiye, düzenlenen hareketin eski ve yeni Borç-Alacak etkisi arasındaki fark kadar güvenli şekilde güncellenir.
+- Eski kayıt txnId içermiyorsa düzenleme sırasında güvenli txnId atanır.
+- Her düzenlemede eski değer editHistory içinde tutulur ve audit_log’a account_entry_update kaydı yazılır.
+- Normalize account_transactions mirror tablosu ilgili düzenleme sonrasında yeniden senkronlanır.
+- Kasa/PO bağlantılı geçmiş hareketlerde yalnız cari kaydı değiştirilmesinin mutabakat gerektirebileceği UI’da açıkça belirtilir.
+
+2) SİPARİŞ & OPERASYON — PO DURUM DEĞİŞİKLİĞİ
+- PO durum değişikliği artık yalnız poId ile değil orderId + poId + poNo bağlamı ile gönderilir.
+- Backend önce belirtilen sipariş içindeki PO’yu arar, sonra global ID, sonra PO No fallback uygular.
+- Eski find_po_by_id referans problemi düzeltildi: PO bulunduğu halde owner bilgisinin null kalıp “PO bulunamadı” üretmesine yol açan kök hata giderildi.
+- Ödeme planı ve parti navlun dağıtımındaki geçici dizi üzerinden referansla yazma hataları da aynı kapsamda düzeltildi.
+- Eski/taşınmış verilerde PO ID eşleşme sorunlarına karşı daha dayanıklıdır.
+- PO bulunamazsa hangi PO ID / Sipariş ID / PO No ile arandığı anlaşılır hata mesajında gösterilir.
+
+3) “unexpected token '<' ... is not valid JSON”
+- runServerOperation artık response’u önce text olarak okur.
+- JSON ise parse eder.
+- Hosting/PHP JSON yerine HTML hata sayfası döndürürse ham JavaScript JSON parse hatası yerine anlaşılır HTTP/sunucu mesajı gösterilir.
+- Login HTML tespit edilirse “oturum süresi dolmuş olabilir” uyarısı verir.
+
+4) V3.4.0 REQUEST ITEM MIRROR UYUMLULUĞU
+- delivery_batch_items senkronizasyonu artık raw itemId yerine request_id + source_item_id üzerinden yeni composite request_items mirror ID’sini kullanır.
+- Böylece V3.4.0 composite kalem kimliği ile teslimat mirror verisi tutarlı kalır.
+
+VERİTABANI ŞEMA DEĞİŞİKLİĞİ: YOK
+- V3.4.0 upgrade.php daha önce çalıştırıldıysa V3.4.1 için tekrar upgrade.php çalıştırmak gerekmez.
+- V3.4.0’dan daha eski bir kurulumdan doğrudan geçiliyorsa upgrade.php bir kez çalıştırılmalıdır.

@@ -1,0 +1,30 @@
+ASAY ERP V3.7.0 — FINAL STABILIZASYON
+
+Düzeltmeler:
+- parties.party_type ENUM: customer/supplier/public/private/customs/freight/service
+- V3.7.0 upgrade migration ve restore sonrası current-schema düzeltmesi
+- Merkezi ASAY_APP_VERSION / ASAY_APP_BUILD
+- Europe/Istanbul varsayılan timezone, ASAY_TIMEZONE env override
+- Tüm /api/ POST/PUT/PATCH/DELETE mutasyonlarında merkezi CSRF zorunluluğu
+- Same-origin fetch mutasyonlarında otomatik X-ASAY-CSRF header
+- sendBeacon state patch için CSRF query token
+- TCMB proxy login koruması, 15 dk server cache, stale last-success fallback
+- Google Drive token atomic write + 0600 izin
+- Native confirm/prompt/alert kaldırıldı; uygulama dialog sistemi
+- Dinamik ikon butonlarına erişilebilir aria-label katmanı
+- CSS core/components ayrımı
+- JS runtime/documents/admin/boot modül ayrımı
+- app_state canonical + normalize mirror drift health diagnostics
+- V3.6.1 PDF/Packing/Check List çift para birimi ve önceki tüm düzeltmeler korunur
+
+Testler:
+PASS PHP syntax
+PASS JavaScript syntax (tüm modüller)
+PASS static/API/permission checks
+PASS security smoke
+PASS file-backed ZIP stream
+PASS PDF preview/print parity
+PASS customer quote item identity regression
+PASS checklist original currency + EUR regression
+PASS V3.7.0 stabilization regression
+SKIP live MySQL contract (yalnız ASAY_E2E_DB=1 ve gerçek MySQL ortamında çalışır)

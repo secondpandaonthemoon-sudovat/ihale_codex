@@ -1,0 +1,20 @@
+ASAY ERP V3.5.3 - Maliyet Merkezi
+
+- Kıyaslama sayfası yalnız tedarikçi teklif kıyaslama ve seçim ekranı olarak bırakıldı.
+- Ek Maliyetler / Operasyon & Teminat Giderleri Maliyet sekmesine taşındı.
+- Manuel Diğer Giderler bölümü eklendi; gider türü serbest metin girilebilir.
+- Gerçekleşen Operasyon Giderleri Maliyet sekmesine taşındı ve geçmiş kayıtlar tabloda gösterilir.
+- Gerçek gider kaydında "Diğer" seçeneği eklendi; gider adı manuel yazılabilir.
+- Cari Hesap / Hizmet Sağlayıcı alanına aynı modal içinde + Ekle butonu eklendi.
+- Yeni cari oluşturulduktan sonra kullanıcı gider ekranına geri döner ve yeni cari seçilebilir.
+- Gümrükçü, Nakliyeci, Hizmet Sağlayıcı, Tedarikçi, Resmi/Özel kurum carileri operasyon giderlerinde kullanılabilir.
+- Planlanan maliyetler ile gerçekleşen finans hareketleri ayrı tutulur; gerçekleşen giderler teklif maliyetine ikinci kez eklenmez.
+- Tüm Maliyeti Kaydet -> Müşteri Teklifi işlemi sabit ek maliyetleri ve manuel giderleri birlikte kaydeder.
+- İptal edilmiş gerçekleşen giderler gerçekleşen toplamdan hariç tutulur.
+
+Testler:
+- PHP lint: PASS
+- JavaScript syntax: PASS
+- Static/API/handler check: PASS
+- Security smoke: PASS
+- File-backed ZIP smoke: PASS

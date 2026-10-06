@@ -1,0 +1,5 @@
+ASAY ERP V3.9.7
+- Gerçekleşen operasyon giderinde durum seçimi tek başına ödeme oluşturmaz; Kasa/Banka seçimi ve ikinci onay zorunludur.
+- PDF & Evrak Stüdyosu ürün kalemlerine GTİP/HS Code ve Menşe editörü eklendi; talep kalemine kaydedilir ve ticari evraklara aktarılır.
+- Eski TRY cari hareketlerinde eksik kur snapshotı işlem tarihindeki TCMB arşivinden otomatik tamamlanır. Hafta sonu/tatil için önceki yayınlanan iş günü kullanılır.
+- EUR/USD karşılıkları işlem tarihindeki kur üzerinden hesaplanır ve kullanılan efektif kur tarihi gösterilir.

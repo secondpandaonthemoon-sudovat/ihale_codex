@@ -1,0 +1,28 @@
+ASAY ERP V3.13.0 — Veri Bütünlüğü / Gerçek Silme / Güvenli Sıfırlama
+
+1. Talep Tamamen Sil
+- Talebe bağlı cari hareketleri temizlenir ve cari bakiyeleri kalan kayıtlardan yeniden hesaplanır.
+- Talebe/siparişe bağlı Kasa-Banka hareketleri ve finance_journal kayıtları kaldırılır.
+- Sipariş, PO, teslimat partileri, tedarikçi teklifleri, müşteri teklifi, kıyaslama seçimleri,
+  teminatlar, ticari evraklar ve talep ekleri temizlenir.
+- Cari kartların ve Kasa/Banka hesaplarının ana kartları korunur.
+- Talep dokümanları fiziksel silme öncesi storage/trash alanına taşınır.
+
+2. Cari Ekstresi / Kasa-Banka Gerçek Silme
+- "Sil" artık reverse_finance üretmez; finance_delete kullanır.
+- Eski ters kayıtlı çiftlerde asıl kayıt + ters kayıt birlikte temizlenir.
+- "Ters Kayıt" fonksiyonu ayrı ve bilinçli muhasebe işlemi olarak korunur.
+
+3. İş Verilerini Sıfırla
+Ayarlar > Sistem & Yedek > Veritabanı Yedekleme & Geri Yükleme alanına eklenmiştir.
+- İşlemden önce otomatik pre_business_reset güvenlik yedeği alınır.
+- Cari kartlar korunur; hareketler ve bakiyeler sıfırlanır.
+- Kasa/Banka hesapları korunur; hareketler ve bakiyeler sıfırlanır.
+- Talepler, teklifler, siparişler, PO'lar, teslimatlar, gider/teminat operasyonları ve finance_journal temizlenir.
+- Kullanıcılar, roller, firma/tema/uygulama ayarları korunur.
+- İşlem için SIFIRLA doğrulaması zorunludur.
+- app_state ve module_state aynı transaction içerisinde güncellenir.
+
+4. Sürüm
+- ASAY_APP_VERSION: 3.13.0
+- State schema marker: v3.13.0

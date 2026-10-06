@@ -1,0 +1,13 @@
+ASAY ERP V3.9.2
+- Tedarikçi teklifi kaydı tedarikçi carisini otomatik oluşturur/bağlar.
+- Eski teklif tedarikçileri istemci normalizasyonunda Cari modülüne taşınır.
+- Gelen Tedarikçi Teklifleri kartında fiyatı 0/boş olan ürün kalemleri gösterilmez.
+- Kıyaslama baz fiyatı KDV Hariç (net) olarak standardize edildi.
+- Her kıyas hücresinde girilen KDV durumu ve kıyas bazı açıkça gösterilir.
+- En Ucuzları Seç işlemi Kıyaslama sekmesinde ve mevcut scroll konumunda kalır.
+- Kıyaslama tablosu çok tedarikçide yatay scroll + sticky talep kalemi ile responsive hale getirildi.
+- Maliyet > EK MALİYETLER / Operasyon Giderleri kaldırıldı.
+- Diğer Giderler kaydedildiğinde Gerçek Ödemeler tablosunda Gerçekleşmedi olarak görünür.
+- Gerçekleşti seçimi cari+kasa/banka finans hareketi açar; Gerçekleşmedi ters kayıtla kapatır.
+- Maliyet içinden eklenen cari/hizmet sağlayıcı aynı ekranda anında seçilebilir.
+- Talep içi Teminat işlemleri kullanıcıyı Teminat Takip ana sayfasına zorla götürmez; global sayfaya gidilirse Talebe Geri Dön bulunur.

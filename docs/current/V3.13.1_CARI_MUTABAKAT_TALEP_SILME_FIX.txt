@@ -1,0 +1,16 @@
+ASAY ERP V3.13.1
+================
+
+Düzeltme kapsamı
+- Talep hard-delete artık talebe/order'a bağlı finance_journal satırlarını tam veriyle yükler.
+- Journal bağlı cari hareketleri, referans Talep No olmasa dahi (ör. PO no / ödeme referansı) finance cleanup üzerinden temizlenir.
+- Daha sonra exact Talep No referanslı commitment/cari satırları da temizlenir ve requestOpen yeniden hesaplanır.
+- V3.13.0 ile daha önce silinmiş taleplerden kalmış güvenli şekilde tanımlanabilen yetim cari hareketleri upgrade.php sırasında onarılır.
+- Cari mirror tablosu canonical app_state üzerinden yeniden oluşturulur.
+
+Güncelleme
+1. Mevcut veritabanı yedeğini alın.
+2. Dosyaları V3.13.1 ile değiştirin.
+3. Admin olarak /upgrade.php adresini açın.
+4. V3.13.1 Güncellemesini Uygula butonuna basın.
+5. Cari Hesaplar ekranını yenileyin ve bakiye/ekstreyi kontrol edin.

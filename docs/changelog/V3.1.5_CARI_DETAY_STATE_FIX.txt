@@ -1,0 +1,6 @@
+ASAY ERP V3.1.5
+- Cari kart aç/kapa durumu artık DOM class'ından değil activeEntityName state'inden yönetilir.
+- Kart açıldığında render tamamlandıktan sonra accountDetail zorunlu olarak aynı cariyle doldurulur.
+- Kart tekrar tıklandığında hem kart hem detay paneli kapanır/temizlenir.
+- Filtre/render döngüsünün detay panelini yanlışlıkla boşaltması engellendi.
+- Boş e-posta/web alanlarında '#' linki kaldırıldı; yanlışlıkla yeni pencere/aynı sayfa davranışı oluşmaz.

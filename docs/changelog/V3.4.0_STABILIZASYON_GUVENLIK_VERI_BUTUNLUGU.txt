@@ -1,0 +1,55 @@
+ASAY ERP V3.4.0 — STABİLİZASYON / GÜVENLİK / VERİ BÜTÜNLÜĞÜ
+
+Bu sürüm V3.3.40 üzerinde yapılan tam sistem incelemesinde bulunan kritik ve orta seviye maddelerin tamamını ele alır.
+
+1. YETKİ
+- has_app_permission fail-closed.
+- Tanımsız rol = yetki yok.
+- Son aktif Admin update/delete koruması.
+- Kullanıcı rol adı server-side doğrulanır.
+
+2. VERİ BÜTÜNLÜĞÜ
+- app_state kanonik kaynak.
+- module_state load overlay kaldırıldı.
+- request_items composite identity: request_id + source_item_id.
+- Legacy raw selected item key yalnız aynı talebe ait supplier ise kabul edilir.
+- NULL party_key duplicate party cleanup.
+- supplier_quotes.total = qty × effective unit + freight.
+- Normalized mirror tabloları incremental UPSERT/delete-stale; tüm tablo rebuild yaklaşımı azaltıldı.
+- account/cash transaction ve delivery item mirrorları stable id olmadığı için kontrollü rebuild edilir.
+
+3. DB YEDEK / RESTORE
+- JSON streaming backup.
+- SQL streaming backup.
+- Full system .asayfull.zip = DB + storage files.
+- Pure-PHP ZIP writer/reader.
+- SQL validator statement-aware.
+- pre_restore / pre_rollback retention: 10.
+- Restore sonrası current schema apply.
+- V3.3.x request_items eski mirror şeması restore sonrası V3.4.0 yapısına yükseltilir.
+
+4. GOOGLE DRIVE
+- mysqldump ve shell exec kaldırıldı.
+- PHP SQL exporter doğrudan Drive'a yükler.
+- Yerel Drive backup cache son 5 dosyayla sınırlandırılır.
+
+5. HOSTING UYUMLULUĞU
+- XLSX export ZipArchive olmadan çalışabilir.
+- Dynamic Excel template ZipArchive olmadan çalışabilir.
+- XLSX import mevcut pure-PHP reader ile devam eder.
+- TCMB SimpleXML fallback eklendi.
+
+6. GÜVENLİK
+- Brute force: 5 yanlış giriş / 10 dk lock.
+- 30 dk sessizlik veya lock süresi sonrası sayaç reset.
+- Login failed audit hash tabanlı.
+- Session strict mode, HttpOnly, SameSite=Lax, HTTPS Secure.
+- Client audit whitelist.
+- upgrade.php CSRF + schema_migrations.
+- install.php production error sanitization.
+- DB manager yalnız Admin görünür/çalışır.
+
+7. UPGRADE
+- upgrade.php bir kez çalıştırılır.
+- Mevcut request_items mirror tablosu app_state korunarak V3.4.0 composite yapıda yeniden oluşturulur.
+- Eski duplicate party mirror kayıtları temizlenir.

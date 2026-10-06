@@ -1,0 +1,11 @@
+ASAY ERP V3.7.0
+
+Production stabilization release.
+- DB party enum migration
+- global API CSRF
+- centralized version/timezone
+- TCMB authenticated server cache/fallback
+- secure Drive token persistence
+- application-native dialogs
+- runtime layer extraction
+- expanded regression checks

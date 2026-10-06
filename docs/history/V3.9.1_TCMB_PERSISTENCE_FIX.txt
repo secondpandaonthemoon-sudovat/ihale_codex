@@ -1,0 +1,6 @@
+ASAY ERP V3.9.1
+- TCMB yenilemesi state.fx yanında MySQL app_state.fx alanına da kalıcı kaydedilir.
+- Sayfa açılışındaki TCMB/MySQL yarış durumu kaldırıldı: önce DB hydrate edilir, sonra kur kontrol edilir.
+- localStorage içindeki daha yeni geçerli kur, eski DB kuru tarafından ezilmez.
+- Server operation sonrası state reload güncel kuru kaybettirmez.
+- Tedarikçi teklifi 24 saat kontrolü capturedAt/fetchedAt ile stabil hale getirildi.

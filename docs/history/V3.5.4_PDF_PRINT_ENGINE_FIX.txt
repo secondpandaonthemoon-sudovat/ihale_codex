@@ -1,0 +1,9 @@
+ASAY ERP V3.5.4 - PDF Print Engine Fix
+
+- printHtmlInFrame CSS parametresi artik iframe <style> icine uygulanir.
+- PDF Studio canli onizleme ve Yazdir/PDF ayni baski CSS motorunu kullanir.
+- Kayitli belgelerin PDF butonu da ayni motoru kullanir.
+- Logo/kase varsayilan konum ve boyutlari baskida korunur; kullanici inline boyut/konumlari korunur.
+- Tablo cerceveleri, baslik arka planlari, fontlar, firma blogu, bilgi blogu, banka kutusu ve footer baskida korunur.
+- A4 dikey/yatay yon bilgisi kayitli belge baskisinda dikkate alinir.
+- Renkli tablo basliklari icin print-color-adjust etkinlestirildi.

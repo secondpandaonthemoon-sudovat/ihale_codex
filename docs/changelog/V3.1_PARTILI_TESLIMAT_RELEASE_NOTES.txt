@@ -1,0 +1,27 @@
+ASAY ERP V3.1 - Partili Teslimat
+
+Sipariş & Operasyon:
+- Sipariş kalemleri parti parti teslim edilebilir.
+- Örnek: 90.000 adet sipariş → P001 10.000 → P002 20.000 → kalan 60.000.
+- Her parti ürün/kalem bazında adet tutar; toplam parti miktarı sipariş miktarını aşamaz.
+- Planlanan parti, teslim edilmeden iptal edilirse ayrılan adetler tekrar kullanılabilir.
+- Teslim edilen parti tekrar teslim edilemez.
+- Sipariş/PO otomatik Kısmi Teslimat ve Teslim Edildi durumuna geçer.
+
+Parti Finans:
+- Her teslim edilmiş parti için müşteriden ayrı tahsilat.
+- Her parti içinde tedarikçi/PO bazında ayrı ödeme.
+- Müşteri tahsilatı sipariş müşteri alacağı ve cari hesabından otomatik düşer.
+- Tedarikçi ödemesi PO kalan borcu ve tedarikçi carisinden otomatik düşer.
+- Parti finans işlemleri ters kayıtla düzeltilebilir; geçmiş silinmez.
+- Genel PO ödeme butonu, partili teslimat başlayan siparişte engellenir; çift ödeme riski önlenir.
+
+Çakışma / Tekrar Koruması:
+- operation_idempotency tablosu eklendi.
+- Çift tıklama / ağ retry / tekrar POST aynı işlemi ikinci kez yazmaz.
+- Tüm parti işlemleri app_state satır kilidi + MySQL transaction içinde doğrulanır.
+- Kalan miktar ve kalan finans tutarı sunucu tarafında tekrar kontrol edilir.
+
+Normalize tablolar:
+- delivery_batches
+- delivery_batch_items

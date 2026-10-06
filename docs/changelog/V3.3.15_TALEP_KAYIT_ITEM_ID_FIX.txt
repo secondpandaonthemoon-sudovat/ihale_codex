@@ -1,0 +1,20 @@
+ASAY ERP V3.3.15 — TALEP KAYIT / REQUEST ITEM ID FIX
+
+Kök neden:
+Yeni talep kalemleri:
+  {id:iid++, ...x}
+şeklinde oluşturuluyordu.
+
+JavaScript object spread sırası nedeniyle tempItems içindeki x.id alanı,
+yeni üretilen benzersiz id değerini tekrar eziyordu. Birden fazla kalemde
+aynı/geçici id varsa MySQL request_items PRIMARY KEY çakışıyor ve state.php
+transaction'ı rollback ediyordu.
+
+Düzeltmeler:
+- Yeni kalem üretimi {...x, id:iid++, spec:...} olarak değiştirildi.
+- Böylece her yeni talep kalemi kesin benzersiz ID alır.
+- state.php normalize request_items mirror senkronu geçmişten kalmış duplicate/0 item id'lerine karşı dayanıklı hale getirildi.
+- Mirror seviyesinde çakışan ID görülürse güvenli yeni mirror ID üretilir; tüm state kaydı artık tek bir eski kalem ID yüzünden kilitlenmez.
+- saveDbState gerçek backend hata mesajını lastDbSaveError içinde tutar.
+- Yeni Talep / Düzenle kayıt hatasında artık gerçek DB hata nedeni kullanıcıya gösterilir.
+- Normalize tablo ve module_state senkronizasyon hataları ayrı aşama adıyla döner.

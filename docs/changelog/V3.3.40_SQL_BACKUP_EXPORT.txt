@@ -1,0 +1,26 @@
+ASAY ERP V3.3.40 — SQL YEDEK İNDİRME
+
+Ayarlar > Veritabanı > Mevcut DB Yedeğini İndir alanı iki formata ayrıldı:
+
+1) Güvenli Yedek (.asaydb.json)
+- ASAY ERP'nin kendi doğrulamalı restore formatı.
+- Sistem içinden Yedeği Kontrol Et / Güvenli Geri Yükle akışında önerilen format.
+
+2) SQL Yedeği (.sql)
+- phpMyAdmin / InfinityFree / cPanel / Plesk gibi ortamlarda manuel import için.
+- Yalnız mevcut ASAY ERP whitelist tablolarını dışa aktarır.
+- CREATE DATABASE / USE komutu içermez; hedef DB adı hostingde seçilir.
+- Import kolaylığı için:
+  SET FOREIGN_KEY_CHECKS=0
+  SET UNIQUE_CHECKS=0
+  DROP TABLE IF EXISTS
+  CREATE TABLE
+  INSERT INTO
+  COMMIT
+  ve kontrolleri tekrar açma yapısı içerir.
+- Veriler 100 satırlık INSERT grupları halinde yazılır.
+- SQL indirme işlemi audit log'a kaydedilir.
+
+Öneri:
+Günlük/normal yedek için .asaydb.json kullanın.
+phpMyAdmin ile manuel taşıma gerektiğinde .sql kullanın.

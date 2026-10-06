@@ -1,0 +1,9 @@
+V3.6.1 - Check List Çift Para Birimi
+
+- Check List artık tedarikçi teklifinin orijinal para birimini kullanır.
+- TRY/USD/EUR fiyatlar yanlış biçimde talep para birimiyle etiketlenmez.
+- Orijinal Birim Fiyat ve EUR Birim Fiyat ayrı gösterilir.
+- Orijinal Toplam ve EUR Toplam ayrı gösterilir.
+- Firma bazında orijinal toplam ve EUR karşılığı özetlenir.
+- Eski kayıtlı Check List kolon düzenlerine EUR sütunları otomatik eklenir.
+- EUR dönüşümünde tedarikçi teklifinin kayıtlı kur snapshotı kullanılır.

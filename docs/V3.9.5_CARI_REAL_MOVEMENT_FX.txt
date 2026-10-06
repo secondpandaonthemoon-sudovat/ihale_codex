@@ -1,0 +1,7 @@
+ASAY ERP V3.9.5
+- Tüm Cariler Genel Ekstresi artık cari kart özeti yerine gerçek hareket satırlarını birleştirir.
+- Tek cari ekstresinde görünen ödeme/tahsilat genel ekstrede de görünür.
+- Yeni server-side cari hareketlerinde işlem anındaki TCMB USD/TRY ve EUR/TRY snapshot'ı saklanır.
+- TRY hareketlerinde işlem tarihindeki snapshot ile EUR/USD karşılığı gösterilir.
+- Snapshot bulunmayan eski TRY hareketlerinde tahmini/bugünkü kur kullanılmaz; Kur kaydı yok gösterilir.
+- Tek cari ekranı, genel rapor, PDF ve CSV aynı kur snapshot'ını kullanır.

@@ -1,0 +1,2 @@
+ASAY ERP V3.11.0
+Operasyon durumu, teslimat partileri, ödeme planı ve gerçek finans hareketleri ayrıldı.

@@ -1,0 +1,14 @@
+ASAY ERP V3.3.37 — KIYASLAMA SEÇİLİ RENK
+
+- Kıyaslama ekranında seçili tedarikçi hücreleri artık teknik uygunluk renginden ayrı, belirgin bir seçili renkle gösterilir.
+- Varsayılan seçili renk: #7c3aed.
+- Seçili hücre:
+  - ayrı arka plan tonu,
+  - 2px seçili renk çerçevesi,
+  - sağ üstte SEÇİLİ etiketi
+  kullanır.
+- Ayarlar > Durum & Kıyaslama Renkleri bölümüne:
+  Kıyaslama · Seçili
+  renk ayarı eklendi.
+- Renk company.statusColors.comparisonSelected altında kalıcı saklanır.
+- Uygun Değil teklif seçilemediği için selected + unsuitable normal akışta oluşmaz; koruyucu stil yine de eklenmiştir.

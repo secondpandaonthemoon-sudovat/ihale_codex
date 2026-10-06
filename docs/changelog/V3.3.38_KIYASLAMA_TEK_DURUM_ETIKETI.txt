@@ -1,0 +1,18 @@
+ASAY ERP V3.3.38 — KIYASLAMA TEK DURUM ETİKETİ
+
+Sorun:
+- Teknik uygunluk rozeti: Uygun
+- En Uygun rozeti
+- Seçili rozeti
+- CSS ::after ile ikinci SEÇİLİ etiketi
+aynı hücrede birlikte görünüyordu.
+
+Düzeltme:
+- CSS ::after SEÇİLİ etiketi kaldırıldı.
+- Eski ayrı En Uygun / Seçili rozetleri kaldırıldı.
+- Her fiyatlı hücre için tek durum etiketi kullanılır:
+  * SEÇİLİ · EN UYGUN
+  * SEÇİLİ
+  * EN UYGUN
+- Teknik uygunluk ayrıca 'Teknik: Uygun / Şartlı / Uygun Değil' şeklinde bilgi olarak kalır.
+- Seçili renk Ayarlar > Durum & Kıyaslama Renkleri > Kıyaslama · Seçili ayarını kullanmaya devam eder.

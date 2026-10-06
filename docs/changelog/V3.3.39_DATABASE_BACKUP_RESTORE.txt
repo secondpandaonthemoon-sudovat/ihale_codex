@@ -1,0 +1,37 @@
+ASAY ERP V3.3.39 — VERİTABANI YEDEKLEME & GERİ YÜKLEME
+
+Ayarlar > Veritabanı altında yeni güvenli DB yönetim merkezi:
+
+1. Tam DB Yedeği İndir
+- ASAY ERP'ye ait 21 tabloyu şema + veri olarak yedekler.
+- Dosya formatı: .asaydb.json
+- DB bağlantı şifresi yedeğe yazılmaz.
+- Kullanıcı password_hash kayıtları normal DB verisi olarak korunur.
+
+2. Yedek Yükle / Kontrol Et
+- ASAY güvenli .asaydb.json dosyası desteklenir.
+- phpMyAdmin'den alınmış yalnız ASAY ERP tablolarını içeren .sql dosyaları da desteklenir.
+- mysql / information_schema / global_priv / columns_priv gibi sistem tablo/komutları reddedilir.
+- users, app_state, parties, requests çekirdek tabloları zorunludur.
+
+3. Güvenli Geri Yükle
+- Yükleme öncesi dosya doğrulaması zorunlu.
+- Restore başlamadan önce storage/db-backups altında otomatik pre_restore güvenlik yedeği alınır.
+- Foreign key kontrolleri kontrollü kapatılır/açılır.
+- Yalnız whitelist'teki ASAY ERP tabloları silinir/değiştirilir.
+- Restore sonrasında güncel database/schema.sql uygulanır.
+- Restore hata verirse otomatik olarak pre_restore yedeğine geri dönülmeye çalışılır.
+
+4. Son Restore Öncesine Geri Dön
+- Son pre_restore güvenlik yedeğini tek tıkla geri yükler.
+- Rollback öncesi mevcut durum ayrıca pre_rollback olarak yedeklenir.
+
+5. Güvenlik
+- Yalnız Admin erişebilir.
+- Mutasyon işlemleri session CSRF token ile korunur.
+- Maksimum uygulama yedek dosyası boyutu 50 MB.
+- storage/.htaccess nedeniyle sunucu güvenlik yedekleri web'den doğrudan indirilemez.
+
+Not:
+- Bu modül veritabanını yedekler.
+- storage/ altındaki fiziksel PDF/Excel/görsel dosyaları bu DB yedeğine dahil değildir; file_registry kayıtları dahildir.

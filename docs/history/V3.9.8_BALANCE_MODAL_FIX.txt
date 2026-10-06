@@ -1,0 +1,6 @@
+ASAY ERP V3.9.8
+- Kasa & Banka > Bakiye Düzelt artık appPrompt kullanmaz.
+- Tutar ve açıklama tek, gerçek modal içinde düzenlenir.
+- Modal doğrudan viewport merkezinde fixed olarak açılır ve sidebar/topbar üzerinde z-index 30000 kullanır.
+- Mobilde de ekran ortasında kalır.
+- Sistem dialog host'u gerektiğinde document.body altına taşınır.

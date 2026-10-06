@@ -1,0 +1,26 @@
+ASAY ERP V3.4.3
+
+1. Tedarikçi Teklifi > Tedarikçi Ekle
+- Nested modal açılışı güçlendirildi.
+- Buton click event'i parent modal/backdrop akışından ayrıldı.
+- Nested modal z-index 1200 olarak zorlanır.
+- Parent modal açık kalırken supplier directory modal güvenilir şekilde üstte açılır.
+- Kapatıldığında inline z-index temizlenir.
+
+2. Talep / İhale Konu Başlığı
+- Yeni Talep/Düzenle formuna bağımsız "Konu Başlığı" alanı eklendi.
+- Konu Başlığı zorunludur.
+- Request title artık ilk ürün kaleminden otomatik üretilmez.
+- Kalem adı değişse bile talep başlığı değişmez.
+- Mevcut RFQ'larda Düzenle ile konu başlığı değiştirilebilir.
+
+3. Doküman Açıklaması
+- Dokümanlar > Doküman Ekle açıklama alanı daha belirgin hale getirildi.
+- Talep içinden dosya ekleme bölümüne de Doküman Açıklaması eklendi.
+- Açıklama file_registry.description alanında tutulur.
+- Doküman kartında Talep No + Konu Başlığı + Müşteri + Kategori/Revizyon + Açıklama ayrı özellik alanları olarak gösterilir.
+- Doküman görüntüleyicide de aynı bilgiler görünür.
+
+4. API JSON güvenliği
+- /api/ endpointlerinde oturum yoksa login.php HTML redirect yerine JSON 401 döner.
+- unexpected token '<' sınıfındaki oturum/redirect kaynaklı hatalar merkezi olarak engellenir.

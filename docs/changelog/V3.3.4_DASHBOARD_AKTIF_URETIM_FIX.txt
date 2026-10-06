@@ -1,0 +1,23 @@
+ASAY ERP V3.3.4 — DASHBOARD AKTİF ÜRETİM & TESLİMAT FIX
+
+Sorun:
+- Dashboard, state.orders içinde open alanı false olmayan her kaydı operasyonel sipariş kabul ediyordu.
+- Eski/orphan sipariş kayıtlarında open alanı yoksa bunlar da aktif sayılıyordu.
+- Silinmiş/geçersiz talebe bağlı eski PO'lar Aktif Üretim & Teslimat bölümünde görünmeye devam edebiliyordu.
+- Aktif Üretim metriği sipariş sayısı yerine aktif PO satırı sayısını gösteriyordu.
+
+Düzeltme:
+- Dashboard için merkezi isValidOperationalOrder() ve isActiveOperationalOrder() kuralları eklendi.
+- Aktif sayılabilmesi için sipariş:
+  * open !== false olmalı,
+  * financialCancelled olmamalı,
+  * geçerli bir requestId ile mevcut talebe bağlı olmalı,
+  * talep Kaybedildi / İptal olmamalı,
+  * talep gerçekten Kazanıldı olmalı,
+  * en az bir PO içermeli,
+  * Aktif Üretim için toplam operasyon durumu Teslim Edildi olmamalı.
+- Orphan/geçmiş kayıtlar state'ten SİLİNMEZ; yalnız Dashboard aktif hesaplamasından çıkarılır.
+- Aktif Üretim metriği artık PO adedi değil gerçek aktif sipariş adedini gösterir.
+- Alt bilgi: aktif sipariş sayısı + sevkiyata hazır PO sayısı.
+- Aktif Üretim & Teslimat tablosu da aynı merkezi kurala bağlandı.
+- Dashboard satış/alış toplamlarında orphan/geçersiz siparişler dışarıda bırakıldı.

@@ -1,0 +1,24 @@
+ASAY ERP V3.3.36 — KDV HARİÇ HESAP + TEKNİK UYGUNLUK + AYARLANABİLİR RENKLER
+
+1) KDV hesap davranışı düzeltildi
+- KDV Hariç seçildiğinde girilen birim fiyat NET fiyat olarak kabul edilir.
+- Kalem toplamı, tedarikçi toplamı ve kıyaslama bu NET fiyatı kullanır.
+- KDV Dahil seçildiğinde girilen fiyat KDV dahil fiyat olarak kabul edilir ve toplam/kıyaslama onu kullanır.
+- Her iki durumda KDV Dahil Karşılık bilgi amaçlı ayrıca hesaplanır ve gösterilir.
+- Backend artık offers[itemId] alanına kullanıcının girdiği efektif fiyatı aynen kaydeder.
+- vatGross[itemId] bilgi amaçlı KDV dahil karşılığı tutar.
+
+2) Teknik Uygunluk artık kalıcı
+- Her kalemde suitable / conditional / unsuitable saklanır.
+- Düzenle ekranında eski teknik uygunluk seçimi geri gelir.
+- Uygun Değil teklif kıyaslamada otomatik En Uygun sayılmaz.
+- Otomatik en ucuz seçim Uygun Değil teklifleri atlar.
+- Uygun Değil teklif manuel seçilemez.
+
+3) Kıyaslama renkleri Ayarlar'dan yönetilebilir
+Ayarlar > Durum & Kıyaslama Renkleri:
+- Kıyaslama · Uygun
+- Kıyaslama · Şartlı
+- Kıyaslama · Uygun Değil
+- Kıyaslama · Fiyat Yok
+renkleri ayrı ayrı seçilebilir ve MySQL app_state içinde company.statusColors ile kalıcı saklanır.

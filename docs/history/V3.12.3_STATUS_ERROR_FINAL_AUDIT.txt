@@ -1,0 +1,14 @@
+ASAY ERP V3.12.3 · Durum Motoru + JSON Hata Gözlemlenebilirliği
+
+1. Talep durumunun tek kanonik kaynağı request.status oldu.
+2. customerQuote.status talep durumundan türetilir; talep durumunu artık ezmez.
+3. Tüm durumlar durum seçiminde her zaman görünür: Taslak, Fiyat Toplanıyor, Kıyaslamaya Hazır, Müşteri Teklifi Hazır, Teklif Gönderildi, Kazanıldı, Kaybedildi, İptal Edildi.
+4. Eski Türkçe/legacy durum değerleri açılışta kanonik değerlere normalize edilir.
+5. Kazanıldı -> önceki aşamalara dönüş, gerçek tahsilat/ödeme/teslimat/gerçek gider yoksa finansal taahhütleri simetrik geri alarak yapılır.
+6. Gerçek operasyon/finans hareketi varsa veri bütünlüğünü korumak için durum geri alma engellenir ve açık neden gösterilir.
+7. Kazanma geri alındığında hem müşteri alacağı hem tedarikçi borçları kapatılır; yeniden kazanıldığında ikisi de tekrar açılır.
+8. API isteklerinde PHP warning/notice çıktıları JSON gövdesine karışmayacak şekilde display_errors kapatıldı ve server log aktif bırakıldı.
+9. operations.php geçersiz JSON/HTML/metin döndürürse kalıcı Sunucu/JSON Hatası penceresi açılır; HTTP kodu, işlem adı, Content-Type, istek ID ve yanıt özeti gösterilir/kopyalanabilir.
+10. Uyarı toast süreleri uzatıldı ve tıklayarak kapatılabilir hale getirildi.
+11. V3.12.1 state mutation queue ve V3.12.2 Cari/Kasa sadeleştirme korunmuştur.
+12. Tüm PHP/JS syntax, security/static ve regression kontrolleri paketleme öncesi çalıştırılır.

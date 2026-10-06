@@ -1,0 +1,10 @@
+ASAY ERP V2.7.3
+Bugün Aksiyon Gerekenler ayarlarına renk seçimi eklendi.
+
+Ayrı renk:
+- Son Teklif / İhale Tarihleri
+- Sevkiyata Hazır Operasyonlar
+- Müşteri Tahsilat Vadeleri
+- Tedarikçi Ödeme Vadeleri
+
+Seçilen renk Dashboard aksiyon kartının sol şeridi ve hafif arka plan tonunda kullanılır.

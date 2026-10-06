@@ -1,0 +1,12 @@
+ASAY ERP V3.6.0 — PDF / PACKING LIST FIX
+
+- Check List / Teklif Kıyaslama çok sayfalı A4 baskı desteği.
+- Packing List çok sayfalı A4 baskı desteği.
+- thead her yeni PDF sayfasında tekrar eder.
+- tablo satırları sayfa arasında bölünmez.
+- Packing List seçili talep kalemlerini otomatik çeker.
+- Birim Net kg ve Birim Brüt kg girişleri eklendi.
+- Satır Toplam Net = Miktar x Birim Net.
+- Satır Toplam Brüt = Miktar x Birim Brüt.
+- Genel net / brüt toplam otomatik hesaplanır.
+- Packing List düzenleme verileri kayıtlı belgede korunur.

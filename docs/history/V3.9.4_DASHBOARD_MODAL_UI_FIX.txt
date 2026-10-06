@@ -1,0 +1,6 @@
+ASAY ERP V3.9.4
+- Dashboard Teminat Takip paneli: aktif, EUR karşılığı, 30 gün içi, süresi geçen ve yakın kayıt listesi.
+- Tüm modal/backdrop katmanları sidebar/topbar üstünde merkezi overlay.
+- Sistem prompt/confirm dialogları için global overlay katmanı.
+- Checkbox/radio hit-area ve tıklanabilirlik güçlendirildi.
+- Bakiye Düzelt ve benzer dialogların sidebar altında kalması engellendi.

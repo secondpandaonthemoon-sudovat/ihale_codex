@@ -1,0 +1,8 @@
+V2.9
+- Kıyaslama seçimleri toggle: aynı seçim tekrar tıklanırsa iptal edilir; sayfa scroll konumu korunur.
+- Müşteri teklifinde kalem satış fiyatı ve genel satış toplamı düzenlenebilir; kâr yeniden hesaplanır.
+- Yeni Dokümanlar ana modülü Talep Merkezi'nin hemen sonrasına eklendi.
+- Yeni/Düzenle Talep ekranından ihale/şartname/teknik dosya yüklenebilir.
+- Kazanıldı sonrası talep durumu tekrar değiştirilebilir; iptal/kaybedildi siparişi pasife alır.
+- PDF ticari evrak tablo sütunları göster/gizle ve yukarı/aşağı sıralanabilir.
+- Sipariş Hazırlanıyor aşamasında Müşteriden Ön Ödeme Tahsil Et: yüzde/tutar hesaplama, banka girişi, cari düşümü, kalan alacak.

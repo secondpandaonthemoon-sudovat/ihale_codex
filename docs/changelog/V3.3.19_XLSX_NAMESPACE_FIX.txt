@@ -1,0 +1,9 @@
+ASAY ERP V3.3.19 — XLSX NAMESPACE UYUMLULUK FIX
+
+- Saf PHP XLSX okuyucu artık hem standart <row>/<c>/<v> etiketlerini
+  hem de namespace önekli <x:row>/<x:c>/<x:v> biçimini destekler.
+- Kullanıcının kalem_ekle.xlsx dosyası test edildi.
+- Uygulamanın kendi Talep_Kalemleri_Excel_Sablonu.xlsx dosyası test edildi.
+- ZipArchive zorunlu değil.
+- SimpleXML zorunlu değil.
+- Normal .xlsx dosyası doğrudan yüklenebilir.

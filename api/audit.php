@@ -1,0 +1,2 @@
+<?php
+declare(strict_types=1);require_once __DIR__.'/../app/bootstrap.php';require_login();$u=current_user();if(!$u||!(user_is_admin($u)||has_app_permission('settings',$u)))json_response(['ok'=>false,'error'=>'Audit kayıtları için Ayarlar görüntüleme yetkisi gerekli'],403);$limit=min(500,max(1,(int)($_GET['limit']??200)));$s=db()->prepare('SELECT a.*,u.name user_name,u.email user_email FROM audit_log a LEFT JOIN users u ON u.id=a.user_id ORDER BY a.id DESC LIMIT '.$limit);$s->execute();json_response(['ok'=>true,'rows'=>$s->fetchAll()]);

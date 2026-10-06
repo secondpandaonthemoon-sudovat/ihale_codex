@@ -1,0 +1,44 @@
+ASAY ERP PHP + MySQL V3.5.1 — COST FLOW / QUOTE ITEM ID / EXCEL / PDF FIX
+Tarih: 02.10.2026
+
+1. Kıyaslama Excel İndir
+- XLSX içeriği satırlarla oluşturuluyor.
+- Sunucu XLSX cevabı bozuk/HTML/çok küçük gelirse otomatik Excel uyumlu .xls fallback üretiliyor.
+- İndirme mesajında export edilen satır sayısı gösteriliyor.
+
+2. Talep / İhale Düzenle
+- Düzenleme artık doğrudan request_update sunucu transaction işlemiyle kalıcı kaydediliyor.
+- Başlık, müşteri, para birimi, ödeme, öncelik, teslim, tarih, açıklama ve kalemler sunucuda doğrulanıyor.
+- Kalem ID'leri talep içinde benzersiz hale getiriliyor; silinen kalem seçimleri temizleniyor.
+
+3. Müşteri Teklifi Kalem Karışması
+- Her talep kalemine kalıcı itemUid eklendi.
+- Teklif satırı satış fiyatı güncellemesi itemUid ile eşleştiriliyor.
+- Kıyaslama yeniden senkronizasyonunda satış fiyatı önce itemUid üzerinden korunuyor.
+- Bu değişiklik ilk kalemin kaybolması / son kalemin tekrarlanması / aynı üründen iki satır oluşması sınıfındaki eşleşme hatalarını hedefler.
+
+4. Yeni Maliyet Adımı
+Akış:
+Talep -> Tedarikçi -> Kıyaslama -> Maliyet -> Müşteri Teklifi -> Sipariş -> Evraklar
+- Kıyaslama içindeki Ek Giderler bölümü kaldırıldı.
+- Ayrı Maliyet sekmesi eklendi.
+- Serbest gider kalemi: gider türü, cari, açıklama, tutar, para birimi.
+- Ham alış, gider toplamı ve giderler dahil maliyet ayrı gösterilir.
+- Müşteri teklifinde Ham Alış veya Giderler Dahil maliyet tabanı seçilebilir.
+
+5. Cari Kart Tipleri
+- Gümrükçü
+- Nakliyeci
+- Hizmet Sağlayıcı
+Maliyet satırlarında bu cariler ve tedarikçiler seçilebilir.
+
+6. PDF & Evrak Stüdyosu
+- PDF önizleme/baskıda Arial/Helvetica font ailesi normalize edildi.
+- Logo maksimum baskı ölçüsü sınırlandı (yaklaşık 30 mm x 16 mm).
+- Önizleme tablo, firma bilgisi ve meta alan font boyutları standardize edildi.
+
+Testler:
+- PHP lint: PASS
+- JavaScript syntax: PASS
+- static/security checks: PASS
+- SimpleZip tabanlı Excel dosyası OpenPyXL ile açılıp satırları doğrulandı.

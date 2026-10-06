@@ -1,0 +1,6 @@
+ASAY ERP V2.8.1
+- Ayarlar panelinin diğer sayfaların altında görünmesine neden olan hatalı HTML kapanışları düzeltildi.
+- Cari Kartı Düzenle ekranına Para Birimi seçimi eklendi.
+- Düzenleme, o anda aktif olan EUR/USD/TRY alt cari hesabını hedefler.
+- Aynı cari için hedef para birimi zaten varsa çakışma engellenir.
+- Para birimi değişiminde bakiye otomatik FX dönüşümü yapılmaz.
